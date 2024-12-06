@@ -14,7 +14,7 @@ const AuthForm = ({ type, validationSchema, initialValues, onSubmit }) => {
         {({ values: { confirmPassword, password } }) => (
           <Form className={style.form}>
             <Icon id="#icon-logo_mobile" className={style.icon_mob}></Icon>
-            {type == 'register' && <CustomField type="text" name="username" placeholder="Name" />}
+            {type === 'register' && <CustomField type="text" name="username" placeholder="Name" />}
             <CustomField type="text" name="email" placeholder="E-mail" />
             <CustomField type="password" name="password" placeholder="Password" />
             {type === 'register' && <CustomField type="password" name="confirmPassword" placeholder="Confirm password" />}
