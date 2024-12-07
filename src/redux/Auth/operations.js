@@ -7,7 +7,7 @@ export const registerThunk = createAsyncThunk('auth/register', async (credential
         setToken(data.token);
         return data;
     } catch (error) {
-        thunkApi.rejectWithValue(error.message);
+        return thunkApi.rejectWithValue(error.message);
     }
 });
 
