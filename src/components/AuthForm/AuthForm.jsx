@@ -1,7 +1,7 @@
 import { Formik, Form } from 'formik';
 import { Link } from 'react-router-dom';
 
-import { Icon } from '../../Icons';
+import { Icon } from '../../icons';
 import CustomField from '../CustomField/CustomField';
 import Bar from '../Bar/Bar';
 
