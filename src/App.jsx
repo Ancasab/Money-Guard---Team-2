@@ -15,18 +15,18 @@
 //   );
 // };
 
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { refreshThunk } from "./redux/Auth/operations";
-import { selectIsRefreshing, selectIsLoggedIn } from "./redux/Auth/selectors";
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshThunk } from './redux/Auth/operations';
+import { selectIsRefreshing, selectIsLoggedIn } from './redux/Auth/selectors';
 
 // Import rute
-import PublicRoute from "./routes/PublicRoute";
+import PublicRoute from './routes/PublicRoute';
 
 // Import pagini
-import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
+import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -42,11 +42,11 @@ const App = () => {
 
   // Redirecționare la login
   useEffect(() => {
-    console.log("isRefreshing:", isRefreshing);
-    console.log("isLoggedIn:", isLoggedIn);
+    console.log('isRefreshing:', isRefreshing);
+    console.log('isLoggedIn:', isLoggedIn);
 
     if (!isRefreshing && !isLoggedIn) {
-      navigate("/login");
+      navigate('/login');
     }
   }, [isRefreshing, isLoggedIn, navigate]);
 
@@ -75,7 +75,7 @@ const App = () => {
       />
       <Route
         path="/"
-        element={<Navigate to={isLoggedIn ? "/dashboard" : "/login"} />}
+        element={<Navigate to={isLoggedIn ? '/dashboard' : '/login'} />}
       />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
@@ -83,12 +83,6 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
 
 // import { Routes, Route, Navigate } from "react-router-dom";
 // // import PrivateRoute from "./routes/PrivateRoute";
@@ -98,7 +92,7 @@ export default App;
 // import LoginPage from "./pages/LoginPage/LoginPage";
 // import PublicRoute from "./routes/PublicRoute";
 // import { useDispatch } from "react-redux";
-// import { useEffect } from "react"; 
+// import { useEffect } from "react";
 // import { refreshThunk } from "./redux/Auth/operations";
 
 // const App = () => {
