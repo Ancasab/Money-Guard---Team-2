@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './Bar.module.css';
+import style from './bar.module.css';
 
 function Bar({ password, confirmPassword }) {
   function calculatePasswordStrength() {
@@ -33,8 +33,8 @@ function Bar({ password, confirmPassword }) {
     filter: strength > 0 ? `drop-shadow(0px 1px 8px rgba(255, 182, 39, 0.50))` : 'none',
   };
   return (
-    <div className={css.passwordStrengthContainer}>
-      <div className={css.strengthBar} style={strengthBarStyles}></div>
+    <div className={style.passwordStrengthContainer}>
+      <div className={style.strengthBar} style={strengthBarStyles}></div>
     </div>
   );
 }

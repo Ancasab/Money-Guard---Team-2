@@ -6,7 +6,6 @@ import { registerSchema } from '../../schemas/schemas';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { registerThunk } from '../../redux/Auth/operations';
 
-
 const initialValues = {
     username: '',
     password: '',
