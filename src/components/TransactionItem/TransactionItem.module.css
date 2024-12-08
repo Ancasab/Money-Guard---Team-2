@@ -1,1 +1,33 @@
-import styled from '@emotion/styled';
+.itemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.detail {
+  flex: 1;
+  text-align: center;
+}
+
+.editButton,
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  transform: scale(1.1);
+}
+
+.editButton {
+  color: #ffa500;
+}
+
+.deleteButton {
+  color: #ff4500;
+}
