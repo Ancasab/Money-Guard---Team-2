@@ -1,5 +1,4 @@
-import React from 'react';
-import style from './bar.module.css';
+import style from './Bar.module.css';
 
 function Bar({ password, confirmPassword }) {
   function calculatePasswordStrength() {

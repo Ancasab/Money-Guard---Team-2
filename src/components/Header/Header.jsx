@@ -1,12 +1,12 @@
 import s from './Header.module.css';
-import { Icon } from '../../Icons';
+import { Icon } from '../../icons';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn, selectUser } from '../../redux/Auth/selectors';
 import { Link } from 'react-router-dom';
 import useMedia from '../../hooks/useMedia';
 
 import { useToggle } from '../../hooks/useToggle';
-import LogOutModal from '../LogOutModal/LogOutModal';
+import LogOutModal from '../LogoutModal/LogoutModal';
 
 function Header() {
     const isLogged = useSelector(selectIsLoggedIn);

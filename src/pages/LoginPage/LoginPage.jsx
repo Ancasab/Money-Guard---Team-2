@@ -46,8 +46,8 @@
 
 import AuthForm from 'components/AuthForm/AuthForm';
 import { useDispatch } from 'react-redux'
-import { loginSchema } from 'schemas/schemas';
-import { loginThunk } from 'redux/Auth/operations';
+import { loginSchema } from '../../schemas/schemas';
+import { loginThunk } from '../../redux/Auth/operations';
 import { toast } from 'react-toastify';
 
 const LoginPage = () => {
