@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { userTransactionsApi } from '../../config/userTransactionsApi';
+import { userTransactionsApi } from '../../config/userTransactionApi';
 import { getBalanceThunk } from '../Auth/operations';
 
 export const getTransactions = createAsyncThunk(
