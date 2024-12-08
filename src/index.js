@@ -6,14 +6,13 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { store, persistor } from './redux/store';
 
 import 'modern-normalize';
 import './index.css';
 
-
-
-import { persistor, store } from './redux/store';
-import { App } from 'App';
+import  App from 'App';
+// Exemplu de reducer gol (temporar)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
@@ -27,4 +26,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Provider>
     </React.StrictMode>
 );
-
