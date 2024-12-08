@@ -1,8 +1,8 @@
 import { ErrorMessage, Field } from 'formik';
 import { useState } from 'react';
 
-import css from './CustomField.module.css';
-import { Icon } from '../../icons';
+import css from './customField.module.css';
+import { Icon } from '../../Icons';
 
 import Icons from '../../sprite.svg';
 
