@@ -1,18 +1,19 @@
-import { Form, Formik } from 'formik';
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import {register} from '../../redux/Auth/slice'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
+import s from './RegisterForm.module.css';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/AuthSlice/ops';
 
-const RegisterForm = () => {
-  const dispatch = useDispatch();
-  const onSubmit = ({ name, email, password }, { resetForm }) => {
-    dispatch(register({ name, email, password }));
-    resetForm();
-  };
-
-  return (
-    <>
-      <Formik
+const RegistrationForm = () => {
+    const dispatch = useDispatch();
+    const onSubmit = ({ email, name, password }, { resetForm }) => {
+        dispatch(register({ email, name, password }));
+        resetForm();
+    };
+    return (
+        <>
+            <Formik
                 initialValues={{
                     email: '',
                     name: '',
@@ -54,8 +55,8 @@ const RegisterForm = () => {
                     </Form>
                 )}
             </Formik>
-    </>
-  )
-}
+        </>
+    );
+};
 
-export default RegisterForm
+export default RegistrationForm;
