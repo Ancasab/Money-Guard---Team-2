@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Icon } from '../../icons';
 
-const CustomDropIndicator = () => {
+import style from './CustomDropIndicator.module.css';
+
+function CustomDropIndicator({ up }) {
   return (
-    <div>CustomDropIndicator</div>
-  )
+    <div>
+      <Icon
+        id={up ? '#icon-vector-up' : '#icon-vector-down'}
+        className={style.icon}
+      />
+    </div>
+  );
 }
 
-export default CustomDropIndicator
+export default CustomDropIndicator;
