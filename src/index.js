@@ -11,15 +11,15 @@ import 'modern-normalize';
 import './index.css';
 
 
-import { persistor, store } from './redux/store';
-import App from './App';
 
+import { persistor, store } from './redux/store';
+import { App } from 'App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <BrowserRouter basename="/Money-Guard---Team-2">
+                <BrowserRouter>
                     <App/>
                     <ToastContainer theme="dark" />
                 </BrowserRouter>
