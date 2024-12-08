@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Money-Guard---Team-2/static/css/main.0615250b.css",
-    "main.js": "/Money-Guard---Team-2/static/js/main.76ad00d2.js",
+    "main.css": "/Money-Guard---Team-2/static/css/main.55c7a924.css",
+    "main.js": "/Money-Guard---Team-2/static/js/main.339d3fcb.js",
     "static/media/gradient-desktop.webp": "/Money-Guard---Team-2/static/media/gradient-desktop.a569266c988dac8c86fa.webp",
     "index.html": "/Money-Guard---Team-2/index.html",
-    "main.0615250b.css.map": "/Money-Guard---Team-2/static/css/main.0615250b.css.map",
-    "main.76ad00d2.js.map": "/Money-Guard---Team-2/static/js/main.76ad00d2.js.map"
+    "main.55c7a924.css.map": "/Money-Guard---Team-2/static/css/main.55c7a924.css.map",
+    "main.339d3fcb.js.map": "/Money-Guard---Team-2/static/js/main.339d3fcb.js.map"
   },
   "entrypoints": [
-    "static/css/main.0615250b.css",
-    "static/js/main.76ad00d2.js"
+    "static/css/main.55c7a924.css",
+    "static/js/main.339d3fcb.js"
   ]
 }
