@@ -14,7 +14,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './Auth/slice';
 import { transactionsReducer } from './Transactions/slice';
-// import { statisticsReducer } from './Statistics/slice';
+import { statisticsReducer } from './Statistics/slice';
 // import { currencyReducer } from './Currency/slice';
 // import { modalsReducer } from './Modals/slice';
 
@@ -28,7 +28,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     transactions: transactionsReducer,
-    // statistics: statisticsReducer,
+    statistics: statisticsReducer,
     // currency: currencyReducer,
     // modals: modalsReducer,
   },

@@ -4,7 +4,7 @@ import {
   addTransactions,
   editTransactions,
   deleteTransactions,
-} from './operations';
+} from '../../redux/Transactions/operations';
 
 const initialState = {
   isTransLoading: false,

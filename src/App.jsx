@@ -1,3 +1,5 @@
+import AddTransactionForm from 'components/AddTransactionForm/AddTransactionForm';
+
 export const App = () => {
   return (
     <div
