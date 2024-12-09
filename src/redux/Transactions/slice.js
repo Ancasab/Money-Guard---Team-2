@@ -4,7 +4,7 @@ import {
   addTransactions,
   editTransactions,
   deleteTransactions,
-} from './operations';
+} from '../../redux/Transactions/operations';
 
 const initialState = {
   isTransLoading: false,
@@ -18,23 +18,23 @@ const slice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getTransactions.fulfilled, (state, { payload }) => {
-        state.transactions = payload;
+        state.transactions = payload || [];
       })
       .addCase(addTransactions.fulfilled, (state, { payload }) => {
-        state = state.transactions.push(payload);
+        state.transactions.push(payload);
       })
       .addCase(editTransactions.fulfilled, (state, { payload }) => {
-        const transactionIndex = state.transactions.findIndex(transaction => {
-          return transaction.id === payload.id;
-        });
+        const transactionIndex = state.transactions.findIndex(
+          transaction => transaction.id === payload.id
+        );
         if (transactionIndex !== -1) {
           state.transactions[transactionIndex] = payload;
         }
       })
       .addCase(deleteTransactions.fulfilled, (state, { payload }) => {
-        state.transactions = state.transactions.filter(transaction => {
-          return transaction.id !== payload;
-        });
+        state.transactions = state.transactions.filter(
+          transaction => transaction.id !== payload
+        );
       })
       .addMatcher(
         isAnyOf(
@@ -69,10 +69,9 @@ const slice = createSlice({
         ),
         (state, { payload }) => {
           state.isTransLoading = false;
-          state.isTransError = payload;
+          state.isTransError = payload || 'An error occurred';
         }
       );
   },
 });
-
 export const transactionsReducer = slice.reducer;

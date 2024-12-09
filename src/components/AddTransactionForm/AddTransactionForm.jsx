@@ -14,6 +14,7 @@ import { useDispatch } from 'react-redux';
 import { addTransactions } from '../../redux/Transactions/operations';
 import { closeAddModal } from '../../redux/Modals/slice';
 import CustomDropIndicator from '../CustomDropIndicator/CustomDropIndicator';
+import { customStyles } from '../AddTransactionForm/customStyles';
 
 function AddTransactionForm() {
   const categories = useSelector(selectCategories);
@@ -36,10 +37,6 @@ function AddTransactionForm() {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const currentDate = new Date();
-  // const formattedDate = format(
-  //   currentDate,
-  //   "EEE MMM dd yyyy HH:mm:ss 'GMT'XXX (zzz)"
-  // );
 
   const schema = yup.object().shape({
     amount: yup.number().required('Number invalid value'),
@@ -229,7 +226,7 @@ function AddTransactionForm() {
         <div className={s.comment}>
           <Select
             classNamePrefix="react-select"
-            // styles={customStyles}
+            styles={customStyles}
             className={s.select_form}
             defaultValue={selectDefaultValue}
             onChange={setSelectedOption}

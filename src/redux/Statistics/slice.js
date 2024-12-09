@@ -2,7 +2,7 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   getTransactionsCategories,
   getTransactionsSummaryByPeriod,
-} from './operations';
+} from '../../redux/Statistics/operations';
 
 const initialState = {
   summary: [],
