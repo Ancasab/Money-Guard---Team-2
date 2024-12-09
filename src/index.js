@@ -12,7 +12,6 @@ import 'modern-normalize';
 import './index.css';
 
 import  App from 'App';
-// Exemplu de reducer gol (temporar)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

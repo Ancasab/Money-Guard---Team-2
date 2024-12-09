@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // Folosește localStorage pentru persistență
-import rootReducer from './Modals/slice'; // Reducerul principal
+import storage from 'redux-persist/lib/storage'; 
+import rootReducer from './Modals/slice'; 
 
 const persistConfig = {
     key: 'root',
@@ -15,7 +15,6 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: {
-                // Ignoră verificările pentru redux-persist
                 ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
             },
         }),

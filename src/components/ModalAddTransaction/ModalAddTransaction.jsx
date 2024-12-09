@@ -20,18 +20,18 @@ const AddTransactionModal = ({ onClose }) => {
       date,
       comment,
     });
-    onClose(); // Închide modalul
+    onClose(); 
   };
 
   return (
     <div className={styles.modalOverlay}>
+      <div className={styles.logo}></div>
       <div className={styles.modalContainer}>
         <button className={styles.closeButton} onClick={onClose}>
           &times;
         </button>
         <h2 className={styles.title}>Add Transaction</h2>
         
-        {/* Income/Expense Toggle */}
         <div className={styles.toggleDiv}>
         <div>
           <span className={styles.toggleSwitchIncome} style={{
@@ -63,23 +63,25 @@ const AddTransactionModal = ({ onClose }) => {
         </div>
         </div>
         <div className={styles.inputGroup}>
-          <select
-            className={styles.inputField}
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="">Select Category</option>
-            <option value="Main expenses">Main expenses</option>
-            <option value="Products">Products</option>
-            <option value="Car">Car</option>
-            <option value="Self care">Self care</option>
-            <option value="Child care">Child care</option>
-            <option value="Household products">Household products</option>
-            <option value="Education">Education</option>
-            <option value="Leisure">Leisure</option>
-          </select>
-        </div>
-
+  {transactionType === "Expense" && (
+    <select
+      className={styles.inputField}
+      value={category}
+      onChange={(e) => setCategory(e.target.value)}
+    >
+      <option value="">Select Category</option>
+      <option value="Main expenses">Main expenses</option>
+      <option value="Products">Products</option>
+      <option value="Car">Car</option>
+      <option value="Self care">Self care</option>
+      <option value="Child care">Child care</option>
+      <option value="Household products">Household products</option>
+      <option value="Education">Education</option>
+      <option value="Leisure">Leisure</option>
+    </select>
+  )}
+</div>
+<div className={styles.inputMedia}>
         <div className={styles.inputGroup}>
           <input
             type="number"
@@ -98,7 +100,7 @@ const AddTransactionModal = ({ onClose }) => {
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-
+        </div>
         <div className={styles.inputGroup}>
           <input
             type="text"

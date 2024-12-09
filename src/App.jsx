@@ -15,7 +15,7 @@ const App = () => {
       {isEditModalOpen && (
   <EditTransactionModal
     transaction={{
-      type: "Income", // Default pentru testare
+      type: "Income", 
       amount: "",
       date: new Date().toISOString().split("T")[0],
       comment: "",
