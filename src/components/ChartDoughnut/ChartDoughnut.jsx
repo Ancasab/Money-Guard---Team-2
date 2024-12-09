@@ -2,8 +2,8 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
 import s from './ChartDoughnut.module.css';
-import { useSelector } from 'react-redux';
-import { selectSummary } from '../../redux/Statistics/selectors';
+// import { useSelector } from 'react-redux';
+// import { selectSummary } from '../../redux/Statistics/selectors';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -12,7 +12,7 @@ const options = {
 };
 
 const ChartDoughnut = ({ data, expenseTotal, incomeTotal }) => {
-  const total = useSelector(selectSummary);
+  // const total = useSelector(selectSummary);
 
   const doughnutData = {
     datasets: [
