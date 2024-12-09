@@ -5,14 +5,14 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
-// import { yupResolver } from '@hookform/resolver/yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { format } from 'date-fns';
 import { selectCategories } from '../../redux/Statistics/selectors';
 import { useSelector } from 'react-redux';
 import Select from 'react-select';
 import { useDispatch } from 'react-redux';
 import { addTransactions } from '../../redux/Transactions/operations';
-// import { closeAddModal } from '../../redux/Modals/slice';
+import { closeAddModal } from '../../redux/Modals/slice';
 import CustomDropIndicator from '../CustomDropIndicator/CustomDropIndicator';
 
 function AddTransactionForm() {
@@ -36,17 +36,17 @@ function AddTransactionForm() {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const currentDate = new Date();
-  const formattedDate = format(
-    currentDate,
-    "EEE MMM dd yyyy HH:mm:ss 'GMT'XXX (zzz)"
-  );
+  // const formattedDate = format(
+  //   currentDate,
+  //   "EEE MMM dd yyyy HH:mm:ss 'GMT'XXX (zzz)"
+  // );
 
   const schema = yup.object().shape({
     amount: yup.number().required('Number invalid value'),
     transactionDate: yup
       .date()
       .required('Date is required')
-      .default(() => new Date(formattedDate)),
+      .default(() => new Date()),
     switch: yup.boolean(),
     category: yup.string(),
     comment: yup.string().required(),
@@ -58,7 +58,7 @@ function AddTransactionForm() {
     control,
     formState: { errors },
   } = useForm({
-    resolver: yup(schema),
+    resolver: yupResolver(schema),
   });
 
   const onSubmit = data => {
@@ -79,13 +79,12 @@ function AddTransactionForm() {
     }
 
     const originalDate = new Date(data.transactionDate);
-    const formattedDate = format(originalDate, 'yyyy-MM-dd');
-    data.transactionDate = formattedDate;
+    data.transactionDate = format(originalDate, 'yyyy-MM-dd');
 
     delete data.switch;
 
     dispatch(addTransactions(data));
-    // dispatch(closeAddModal());
+    dispatch(closeAddModal());
   };
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -270,14 +269,14 @@ function AddTransactionForm() {
             render={({ field }) => (
               <>
                 <DatePicker
-                  selected={field.value || formattedDate}
+                  selected={field.value || currentDate}
                   onChange={date => field.onChange(date)}
                   dateFormat="dd.MM.yyyy"
                   open={isDatePickerOpen}
                   onClickOutside={() => setIsDatePickerOpen(false)}
                   className={s.customDatePicker}
                   calendarClassName={s.calendarClassName}
-                  maxDate={formattedDate}
+                  maxDate={currentDate}
                 />
               </>
             )}
@@ -324,7 +323,7 @@ function AddTransactionForm() {
         className={clsx(s.btn, s.btn_cancel)}
         type="button"
         onClick={() => {
-          // dispatch(closeAddModal());
+          dispatch(closeAddModal());
         }}
       >
         Cancel

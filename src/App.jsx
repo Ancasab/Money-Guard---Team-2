@@ -1,5 +1,9 @@
 // import { Navigate, Route, Routes } from 'react-router-dom';
 
+import AddTransactionForm from 'components/AddTransactionForm/AddTransactionForm';
+import TransactionsItem from 'components/TransactionItem/TransactionItem';
+import TransactionsList from 'components/TransactionList/TransactionList';
+
 // import './App.css';
 
 // import PublicRoute from './routes/PublicRoute';
@@ -34,9 +38,6 @@
 // }
 
 // export default App;
-
-
-
 
 // import { Navigate, Route, Routes } from 'react-router-dom';
 // import { refreshThunk } from './redux/Auth/operations';
@@ -122,23 +123,23 @@
 
 // export default App;
 
+export const App = () => {
+  return (
+    <div
+      style={{
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 40,
+        color: '#010101',
+      }}
+    >
+      <TransactionsList />
 
+      <AddTransactionForm />
+    </div>
+  );
+};
 
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101',
-//       }}
-//     ></div>
-//   );
-// };
-
-// export default App;
-
+export default App;
