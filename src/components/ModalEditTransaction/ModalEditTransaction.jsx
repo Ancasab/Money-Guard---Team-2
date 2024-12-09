@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import "./ModalEditTransaction.module.css";
+import styles from "./ModalEditTransaction.module.css";
 
 const EditTransactionModal = ({ transaction, onClose, onSave }) => {
   const [transactionType, setTransactionType] = useState(transaction.type || "Income");
   const [amount, setAmount] = useState(transaction.amount || "");
   const [date, setDate] = useState(transaction.date || new Date().toISOString().split("T")[0]);
   const [comment, setComment] = useState(transaction.comment || "");
-
+  const [category, setCategory] = useState("");
+  
   const handleSave = () => {
     onSave({
       ...transaction,
@@ -19,67 +20,85 @@ const EditTransactionModal = ({ transaction, onClose, onSave }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-container">
-        <button className="close-button" onClick={onClose}>
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContainer}>
+        <button className={styles.closeButton} onClick={onClose}>
           &times;
         </button>
-        <h2>Edit Transaction</h2>
+        <h2 className={styles.title}>Edit Transaction</h2>
 
-        {/* Selectare Income/Expense */}
-        <div className="transaction-type-toggle">
+        <div className={styles.transactionTypeToggle}>
           <button
-            className={`transaction-type-button ${
-              transactionType === "Income" ? "selected-income" : ""
+            className={`${styles.transactionTypeButton} ${
+              transactionType === "Income" ? styles.selectedIncome : ""
             }`}
             onClick={() => setTransactionType("Income")}
           >
-            Income
+            Income  
           </button>
+          <span className={styles.span}>/</span>
           <button
-            className={`transaction-type-button ${
-              transactionType === "Expense" ? "selected-expense" : ""
+            className={`${styles.transactionTypeButton} ${
+              transactionType === "Expense" ? styles.selectedExpense : ""
             }`}
             onClick={() => setTransactionType("Expense")}
           >
             Expense
           </button>
         </div>
-
-        <div className="input-group">
+        <div className={styles.inputGroup}>
+  {transactionType === "Expense" && (
+    <select
+      className={styles.inputField}
+      value={category}
+      onChange={(e) => setCategory(e.target.value)}
+    >
+      <option value="">Select Category</option>
+      <option value="Main expenses">Main expenses</option>
+      <option value="Products">Products</option>
+      <option value="Car">Car</option>
+      <option value="Self care">Self care</option>
+      <option value="Child care">Child care</option>
+      <option value="Household products">Household products</option>
+      <option value="Education">Education</option>
+      <option value="Leisure">Leisure</option>
+    </select>
+  )}
+</div>
+        <div className={styles.inputGroup}>
           <input
             type="number"
-            className="input-field"
+            className={styles.inputField}
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="0.00"
           />
         </div>
 
-        <div className="input-group">
+        <div className={styles.inputGroup}>
           <input
             type="date"
-            className="input-field"
+            className={styles.inputField}
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
 
-        <div className="input-group">
+        <div className={styles.inputGroup}>
           <input
             type="text"
-            className="input-field"
+            className={styles.inputField}
             value={comment}
             onChange={(e) => setComment(e.target.value)}
             placeholder="Comment"
           />
         </div>
 
-        <div className="button-group">
-          <button className="primary-button" onClick={handleSave}>
+        <div className={styles.buttonGroup}>
+          <button className={styles.primaryButton} onClick={handleSave}>
             SAVE
           </button>
-          <button className="secondary-button" onClick={onClose}>
+          <button className={styles.secondaryButton} onClick={onClose}>
             CANCEL
           </button>
         </div>
