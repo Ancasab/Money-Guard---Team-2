@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
-import icons from '../img/icons/sprite.svg';
+import icons from '../../sprite.svg';
 
 const Navigation = () => {
   return (
@@ -27,8 +27,8 @@ const Navigation = () => {
         }
       >
         <div className={styles.linkIcon}>
-          <svg className={styles.statisticsIcon}>
-            <use href={`${icons}#icon-statistics`}></use>
+          <svg className={styles.graphicIcon}>
+            <use href={`${icons}#icon-graphic`}></use>
           </svg>
         </div>
         <span className={styles.linkText}>Statistics</span>

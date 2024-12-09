@@ -99,9 +99,11 @@ div.navigation {
       height: 11px;
     }
   
-    .linkIcon .statisticsIcon {
-      width: 14px;
-      height: 8px;
+    .linkIcon .graphicIcon {
+      width: 26px;
+      height: 22px;
+      background-color: transparent;
+      fill: grey;
     }
   }
   
