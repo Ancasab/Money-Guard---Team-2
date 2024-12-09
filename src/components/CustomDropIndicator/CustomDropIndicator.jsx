@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '../../Icons';
+import { Icon } from '../../icons';
 
 import style from './customDropIndicator.module.css';
 
