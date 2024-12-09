@@ -11,3 +11,4 @@ export const setToken = token => {
 export const removeToken = () => {
   userTransactionsApi.defaults.headers.common.Authorization = ``;
 };
+export default userTransactionsApi;

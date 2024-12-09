@@ -1,8 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {
-  userTransactionsApi,
-  setToken,
-} from '../../config/userTransactionsApi';
+import { userTransactionsApi, setToken } from '../../config/userTransactionApi';
 
 export const getTransactionsSummaryByPeriod = createAsyncThunk(
   'transactions/summary',
