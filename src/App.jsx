@@ -1,40 +1,40 @@
 
 //App VERIFICARE LOGIN SI REGISTRATION//
 
-import { Navigate, Route, Routes } from 'react-router-dom';
-import './App.css';
-import PublicRoute from './routes/PublicRoute';
-import LoginPage from './pages/LoginPage/LoginPage';
-import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
+// import { Navigate, Route, Routes } from 'react-router-dom';
+// import './App.css';
+// import PublicRoute from './routes/PublicRoute';
+// import LoginPage from './pages/LoginPage/LoginPage';
+// import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 
 
-function App() {
-    return (
-        <div className="app">
-            <Routes>
-                <Route
-                    path="login"
-                    element={
-                        <PublicRoute>
-                            <LoginPage />
-                        </PublicRoute>
-                    }
-                />
-                <Route
-                    path="register"
-                    element={
-                        <PublicRoute>
-                            <RegistrationPage />
-                        </PublicRoute>
-                    }
-                />
-                <Route path="*" element={<Navigate to="login" />} />
-            </Routes>
-        </div>
-    );
-}
+// function App() {
+//     return (
+//         <div className="app">
+//             <Routes>
+//                 <Route
+//                     path="login"
+//                     element={
+//                         <PublicRoute>
+//                             <LoginPage />
+//                         </PublicRoute>
+//                     }
+//                 />
+//                 <Route
+//                     path="register"
+//                     element={
+//                         <PublicRoute>
+//                             <RegistrationPage />
+//                         </PublicRoute>
+//                     }
+//                 />
+//                 <Route path="*" element={<Navigate to="login" />} />
+//             </Routes>
+//         </div>
+//     );
+// }
 
-export default App;
+// export default App;
 
 //===App PENTRU NAVIGATION SI CURRENCY===//
 
