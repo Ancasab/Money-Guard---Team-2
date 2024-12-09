@@ -1,19 +1,14 @@
 {
   "files": {
-    "main.css": "/Money-Guard---Team-2/static/css/main.23268e2d.css",
-    "main.js": "/Money-Guard---Team-2/static/js/main.2cf62c35.js",
-    "static/media/register-desktop.webp": "/Money-Guard---Team-2/static/media/register-desktop.dfec0cf079f44eae03b0.webp",
-    "static/media/login-desktop.webp": "/Money-Guard---Team-2/static/media/login-desktop.20a1135a09ebac1464b1.webp",
+    "main.css": "/Money-Guard---Team-2/static/css/main.55c7a924.css",
+    "main.js": "/Money-Guard---Team-2/static/js/main.9dccdd2a.js",
     "static/media/gradient-desktop.webp": "/Money-Guard---Team-2/static/media/gradient-desktop.a569266c988dac8c86fa.webp",
-    "static/media/login-tablet.webp": "/Money-Guard---Team-2/static/media/login-tablet.cc61fda4a137ed4bf52c.webp",
-    "static/media/register-tablet.webp": "/Money-Guard---Team-2/static/media/register-tablet.696e30de300d4432b3ec.webp",
-    "static/media/sprite.svg": "/Money-Guard---Team-2/static/media/sprite.fcc7df84ef748aeb2a3de0d754515911.svg",
     "index.html": "/Money-Guard---Team-2/index.html",
-    "main.23268e2d.css.map": "/Money-Guard---Team-2/static/css/main.23268e2d.css.map",
-    "main.2cf62c35.js.map": "/Money-Guard---Team-2/static/js/main.2cf62c35.js.map"
+    "main.55c7a924.css.map": "/Money-Guard---Team-2/static/css/main.55c7a924.css.map",
+    "main.9dccdd2a.js.map": "/Money-Guard---Team-2/static/js/main.9dccdd2a.js.map"
   },
   "entrypoints": [
-    "static/css/main.23268e2d.css",
-    "static/js/main.2cf62c35.js"
+    "static/css/main.55c7a924.css",
+    "static/js/main.9dccdd2a.js"
   ]
 }
