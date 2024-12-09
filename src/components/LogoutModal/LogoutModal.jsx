@@ -16,7 +16,7 @@ const LogOutModal = ({ closeModal }) => {
     document.body.style.overflow = 'hidden';
 
     const addCloseEvent = event => {
-        event.key === 'Escape' && closeModal();
+      event.key === 'Escape' && closeModal();
     };
     document.addEventListener('keydown', addCloseEvent);
 
