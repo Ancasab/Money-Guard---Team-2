@@ -21,6 +21,7 @@ const EditTransactionModal = ({ transaction, onClose, onSave }) => {
 
   return (
     <div className={styles.modalOverlay}>
+      <div className={styles.logo}></div>
       <div className={styles.modalContainer}>
         <button className={styles.closeButton} onClick={onClose}>
           &times;

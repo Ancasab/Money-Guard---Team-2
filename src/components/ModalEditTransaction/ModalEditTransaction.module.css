@@ -31,72 +31,36 @@ height: 31px;
 color: white;
 }
 
-.toggleDiv{
-  width: 250px;
-height: 44px;
-color: white;
-display:flex;
-gap: 20px;
-text-align: center;
-margin-left: 15px;
-margin-top: 40px;
-}
-
-.toggleSwitch {
+.transactionTypeToggle {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white; 
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  padding: 0 10px;
   margin-bottom: 20px;
-  width: 90px;
-height: 40px;
-border-radius: 30px;
+  margin-left: 170px;
 }
 
-.toggleSwitchCircle {
-  width: 44px;
-  height: 44px;
-  background-color: rgba(255, 134, 141, 1);
-  border-radius: 50%;
-  position: absolute;
-  top: -2px;
-  margin-left: -2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.transactionTypeButton {
+  border: none;
+  border-radius: 5px;
+  background: none;
+  color: rgba(224, 224, 224, 1);
+  cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.toggleSwitchLabel {
-  width: 50%;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-}
-
-.toggleSwitchIncome{
   font-family: 'Poppins';
 font-size: 16px;
-font-weight: 550;
+font-weight: 600;
 line-height: 24px;
-text-align: right;
+
 }
 
-.toggleSwitchExpense{
-  font-family: 'Poppins';
-font-size: 16px;
-font-weight: 550;
-line-height: 24px;
-text-align: left;
+.transactionTypeButton.selectedIncome {
+  color: rgba(255, 182, 39, 1);
+}
 
+.transactionTypeButton.selectedExpense {
+  color: rgba(255, 134, 141, 1);
+}
+
+.span{
+  color: rgba(224, 224, 224, 1);
 }
 
 .inputGroup {
@@ -106,22 +70,20 @@ font-size: 18px;
 font-weight: 400;
 line-height: 27px;
 text-align: left;
-text-underline-position: from-font;
 text-decoration-skip-ink: none;
-
 }
 
-  .inputField {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    font-size: 18px;
-    margin-top: 5px;
-    outline: none;
-    transition: border-color 0.3s ease; 
-    background: none;
-    color: rgba(255, 255, 255, 0.6);
+.inputField {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 18px;
+  margin-top: 5px;
+  outline: none;
+  transition: border-color 0.3s ease; 
+  background: none;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .inputField option {
@@ -175,27 +137,31 @@ border: none;
   right: 10px;
 }
 
-.logo{
-  display: flex;
-}
 
 @media (max-width: 767.98px){
+
   .closeButton{
     display: none;
   }
+
   .logo{
     width: 320px;
 height: 60px;
 background: linear-gradient(270.02deg, #2E1746 3.2%, #2E225F 99.98%);
 ;
-
   }
+
   .modalOverlay{
     display: flex;
     flex-direction: column;
   }
+
   .modalContainer{
     border-radius: 0;
+  }
+
+  .transactionTypeToggle{
+    margin-left: 70px;
   }
 }
 
@@ -213,18 +179,10 @@ border-radius: 8px 0px 0px 0px;
     margin-left: 50px;
   }
 
-  .toggleDiv{
-    margin-left: 120px;
-  }
-
   .inputGroup{
     width: 394px;
     margin-left: 30px;
     margin-right: 30px;
-  }
-
-  .inputMedia{
-    display: flex;
   }
   
   .buttonGroup{
@@ -249,18 +207,10 @@ align-items: center;
     margin-left: 50px;
   }
 
-  .toggleDiv{
-    margin-left: 120px;
-  }
-
   .inputGroup{
     width: 394px;
     margin-left: 30px;
     margin-right: 30px;
-  }
-
-  .inputMedia{
-    display: flex;
   }
   
   .buttonGroup{
@@ -273,35 +223,3 @@ align-items: center;
 }
 
 
-
-.transactionTypeToggle {
-    display: flex;
-    margin-bottom: 20px;
-    margin-left: 170px;
-  }
-  
-  .transactionTypeButton {
-    border: none;
-    border-radius: 5px;
-    background: none;
-    color: rgba(224, 224, 224, 1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Poppins';
-font-size: 16px;
-font-weight: 600;
-line-height: 24px;
-
-  }
-  
-  .transactionTypeButton.selectedIncome {
-    color: rgba(255, 182, 39, 1);
-  }
-  
-  .transactionTypeButton.selectedExpense {
-    color: rgba(255, 134, 141, 1);
-  }
-  
-  .span{
-    color: rgba(224, 224, 224, 1);
-  }
