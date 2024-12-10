@@ -1,3 +1,4 @@
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -49,3 +50,4 @@ const modalsSlice = createSlice({
 export const modalsReducer = modalsSlice.reducer;
 export const { takeTransactionData, openEditModal, closeEditModal, openAddModal, closeAddModal, addEditId } = modalsSlice.actions;
 export const { selectTransaction, selectIsEditModalOpen, selectIsAddModalOpen, selectIsEditID } = modalsSlice.selectors;
+
