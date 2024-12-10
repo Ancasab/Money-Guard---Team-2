@@ -1,11 +1,12 @@
+
+//App VERIFICARE LOGIN SI REGISTRATION//
+
 // import { Navigate, Route, Routes } from 'react-router-dom';
-
 // import './App.css';
-
 // import PublicRoute from './routes/PublicRoute';
-
 // import LoginPage from './pages/LoginPage/LoginPage';
 // import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
+
 
 // function App() {
 //     return (
@@ -34,6 +35,62 @@
 // }
 
 // export default App;
+
+//===App PENTRU NAVIGATION SI CURRENCY===//
+
+// import { Routes, Route } from "react-router-dom";
+// import SharedLayout from "components/Currency/SharedLayout";
+// import CurrencyPage from "components/Currency/CurrencyPage";
+// const App = () => {
+//     // const dispatch = useDispatch();
+//     // const isRefreshing = useSelector(selectIsRefreshing);
+//     // useEffect(() => {
+//     //     dispatch(refreshThunk());
+//     // }, [dispatch]);
+//     // if (isRefreshing) {
+//     //     return <div>Loading...</div>;
+//     // }
+//     return (
+//         <Routes>
+//             <Route path="/dashboard" element={<SharedLayout />} />
+//             <Route path="/currency" element={<CurrencyPage />} />
+//         </Routes>
+//     );
+// };
+// export default App;
+
+
+//===App PENTRU TRANSACTIONS====
+
+// import AddTransactionForm from './components/AddTransactionForm/AddTransactionForm';
+// // import TransactionsItem from './components/TransactionItem/TransactionItem';
+// import TransactionsList from './components/TransactionList/TransactionList';
+
+// export const App = () => {
+//   return (
+//     <div
+//       style={{
+//         height: '100vh',
+//         display: 'flex',
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//         fontSize: 40,
+//         color: '#010101',
+//       }}
+//      >
+//      <TransactionsList />
+
+//    <AddTransactionForm /> 
+
+      
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// === App PENTRU TOATE ELEMENTELE===//
 
 // import { Navigate, Route, Routes } from 'react-router-dom';
 // import { refreshThunk } from './redux/Auth/operations';
@@ -119,19 +176,4 @@
 
 // export default App;
 
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    ></div>
-  );
-};
 
-export default App;

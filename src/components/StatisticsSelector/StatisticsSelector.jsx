@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 
@@ -46,6 +46,7 @@ function StatisticsSelector() {
   );
 
   useEffect(() => {
+    console.log('Year changed:', year);
     const filteredOptions = optionsMonth.filter(option => {
       if (Number(year.value) === currentYear) {
         return option.value <= currentMonth;
@@ -53,6 +54,7 @@ function StatisticsSelector() {
         return true;
       }
     });
+    console.log('Filtered options:', filteredOptions);
     setMonthOptions(filteredOptions);
   }, [year]);
 
@@ -82,7 +84,7 @@ function StatisticsSelector() {
         className={style.select}
         styles={styleSelect}
         options={monthOptions}
-        value={month.label}
+        value={month}  // Obiect complet
         onChange={handleMonthChange}
         name="optionsMonth"
         id="month-select"
@@ -104,7 +106,7 @@ function StatisticsSelector() {
         className={style.select}
         styles={styleSelect}
         options={filteredYearOptions}
-        value={year.value}
+        value={year}  // Obiect complet
         onChange={handleYearChange}
         name="optionYear"
         id="years-select"
