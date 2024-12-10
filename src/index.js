@@ -6,7 +6,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { store, persistor } from './redux/store';
 
 import 'modern-normalize';
 import './index.css';
