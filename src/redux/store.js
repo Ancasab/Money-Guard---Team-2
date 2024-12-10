@@ -1,23 +1,44 @@
-//import { configureStore } from '@reduxjs/toolkit';
-//import { persistStore, persistReducer } from 'redux-persist';
-//import storage from 'redux-persist/lib/storage'; 
-//import rootReducer from './Modals/slice'; 
+import { configureStore } from '@reduxjs/toolkit';
 
-//const persistConfig = {
-  //  key: 'root',
-   // storage,
-//};
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-//const persistedReducer = persistReducer(persistConfig, rootReducer);
+import { authReducer } from './Auth/slice';
+import { transactionsReducer } from './Transactions/slice';
+import { statisticsReducer } from './Statistics/slice';
+// import { currencyReducer } from './Currency/slice';
+// import { modalsReducer } from './Modals/slice';
 
-//export const store = configureStore({
-    //reducer: persistedReducer,
-   // middleware: (getDefaultMiddleware) =>
-       // getDefaultMiddleware({
-            //serializableCheck: {
-               // ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
-            //},
-        //}),
-//});
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
 
-//export const persistor = persistStore(store);
+export const store = configureStore({
+  reducer: {
+    auth: persistReducer(authPersistConfig, authReducer),
+    transactions: transactionsReducer,
+    statistics: statisticsReducer,
+    // currency: currencyReducer,
+    // modals: modalsReducer,
+  },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
+
+export const persistor = persistStore(store);
+

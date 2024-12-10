@@ -1,13 +1,14 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const userTransactionsApi = axios.create({
-  baseURL: "https://wallet.b.goit.study",
+  baseURL: 'https://wallet.b.goit.study/api',
 });
 
-export const setToken = (token) => {
+export const setToken = token => {
   userTransactionsApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 export const removeToken = () => {
-  userTransactionsApi.defaults.headers.common.Authorization = ``;
+  delete userTransactionsApi.defaults.headers.common.Authorization;
 };
+// export default userTransactionsApi;
