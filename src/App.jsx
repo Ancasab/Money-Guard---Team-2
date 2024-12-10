@@ -1,6 +1,35 @@
 
 //App VERIFICARE LOGIN SI REGISTRATION//
 
+// // import LoginPage from './pages/LoginPage/LoginPage';
+// import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
+// // import LogOutModal from 'components/LogoutModal/LogoutModal';
+
+// export const App = () => {
+//   return (
+//     <div
+//       style={{
+//         height: '100vh',
+//         display: 'flex',
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//         fontSize: 25,
+//         color: '#010101',
+//       }}
+//      >
+//      {/* <LoginPage /> */}
+
+//         <RegistrationPage /> 
+        
+//         {/* <LogOutModal />  */}
+
+      
+//     </div>
+//   );
+// };
+
+// export default App;
+
 // import { Navigate, Route, Routes } from 'react-router-dom';
 // import './App.css';
 // import PublicRoute from './routes/PublicRoute';
