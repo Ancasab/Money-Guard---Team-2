@@ -104,26 +104,26 @@
 
 //===App PENTRU NAVIGATION SI CURRENCY===//
 
-// import { Routes, Route } from "react-router-dom";
-// import SharedLayout from "components/Currency/SharedLayout";
-// import CurrencyPage from "components/Currency/CurrencyPage";
-// const App = () => {
-//     // const dispatch = useDispatch();
-//     // const isRefreshing = useSelector(selectIsRefreshing);
-//     // useEffect(() => {
-//     //     dispatch(refreshThunk());
-//     // }, [dispatch]);
-//     // if (isRefreshing) {
-//     //     return <div>Loading...</div>;
-//     // }
-//     return (
-//         <Routes>
-//             <Route path="/dashboard" element={<SharedLayout />} />
-//             <Route path="/currency" element={<CurrencyPage />} />
-//         </Routes>
-//     );
-// };
-// export default App;
+import { Routes, Route } from "react-router-dom";
+import SharedLayout from "components/Currency/SharedLayout";
+import CurrencyPage from "components/Currency/CurrencyPage";
+const App = () => {
+    // const dispatch = useDispatch();
+    // const isRefreshing = useSelector(selectIsRefreshing);
+    // useEffect(() => {
+    //     dispatch(refreshThunk());
+    // }, [dispatch]);
+    // if (isRefreshing) {
+    //     return <div>Loading...</div>;
+    // }
+    return (
+        <Routes>
+            <Route path="/" element={<SharedLayout />} />
+            <Route path="/" element={<CurrencyPage />} />
+        </Routes>
+    );
+};
+export default App;
 
 
 //===App PENTRU TRANSACTIONS====
