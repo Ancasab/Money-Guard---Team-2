@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 
@@ -14,7 +14,7 @@ import {
 
 import CustomDropIndicator from '../CustomDropIndicator/CustomDropIndicator';
 
-import style from './statisticsSelector.module.css';
+import style from '../StatisticsSelector/StatisticsSelector.module.css';
 import { styleSelect } from './styleSelect';
 
 function StatisticsSelector() {
@@ -84,7 +84,7 @@ function StatisticsSelector() {
         className={style.select}
         styles={styleSelect}
         options={monthOptions}
-        value={month}  // Obiect complet
+        value={month} // Obiect complet
         onChange={handleMonthChange}
         name="optionsMonth"
         id="month-select"
@@ -106,7 +106,7 @@ function StatisticsSelector() {
         className={style.select}
         styles={styleSelect}
         options={filteredYearOptions}
-        value={year}  // Obiect complet
+        value={year} // Obiect complet
         onChange={handleYearChange}
         name="optionYear"
         id="years-select"

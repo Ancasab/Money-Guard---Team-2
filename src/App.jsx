@@ -1,4 +1,3 @@
-
 //App VERIFICARE LOGIN SI REGISTRATION//
 
 // import { Navigate, Route, Routes } from 'react-router-dom';
@@ -6,7 +5,6 @@
 // import PublicRoute from './routes/PublicRoute';
 // import LoginPage from './pages/LoginPage/LoginPage';
 // import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
-
 
 // function App() {
 //     return (
@@ -59,11 +57,9 @@
 // };
 // export default App;
 
-
 //===App PENTRU TRANSACTIONS====
 
-// import AddTransactionForm from './components/AddTransactionForm/AddTransactionForm';
-// // import TransactionsItem from './components/TransactionItem/TransactionItem';
+// import TransactionsItem from './components/TransactionItem/TransactionItem';
 // import TransactionsList from './components/TransactionList/TransactionList';
 
 // export const App = () => {
@@ -77,18 +73,20 @@
 //         fontSize: 40,
 //         color: '#010101',
 //       }}
-//      >
-//      <TransactionsList />
+//     >
+{
+  /* <TransactionsList />
 
-//    <AddTransactionForm /> 
+      <AddTransactionForm /> */
+}
 
-      
-//     </div>
-//   );
-// };
+{
+  /* </div>
+  );
+};
 
-// export default App;
-
+export default App; */
+}
 
 // === App PENTRU TOATE ELEMENTELE===//
 
@@ -175,5 +173,3 @@
 // }
 
 // export default App;
-
-
