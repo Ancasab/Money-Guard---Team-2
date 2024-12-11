@@ -74,19 +74,19 @@
 //         color: '#010101',
 //       }}
 //     >
-{
-  /* <TransactionsList />
+// {
+/* <TransactionsList />
+
 
       <AddTransactionForm /> */
-}
-
-{
-  /* </div>
+// }
+// {
+/* </div>
   );
 };
 
 export default App; */
-}
+// }
 
 // === App PENTRU TOATE ELEMENTELE===//
 
