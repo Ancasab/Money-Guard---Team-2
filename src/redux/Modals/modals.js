@@ -1,11 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
-
-const dummyReducer = (state = {}, action) => {
-    return state;
-};
+import { modalsReducer } from './slice'; // Importă reducer-ul corect
 
 const rootReducer = combineReducers({
-    dummy: dummyReducer, 
+    modals: modalsReducer, // Adaugă reducer-ul `modals`
+    dummy: (state = {}, action) => state, // Poți păstra un dummyReducer dacă este necesar
 });
 
 export default rootReducer;
