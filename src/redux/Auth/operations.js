@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { userTransactionsApi, setToken, removeToken } from '../../config/userTransactionApi';
-import { updateBalance } from './slice';
+// import { updateBalance } from './slice';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
