@@ -14,7 +14,7 @@ import {
 
 import CustomDropIndicator from '../CustomDropIndicator/CustomDropIndicator';
 
-import style from './statisticsSelector.module.css';
+import style from './StatisticsSelector.module.css';
 import { styleSelect } from './styleSelect';
 
 function StatisticsSelector() {

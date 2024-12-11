@@ -15,8 +15,7 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from './Auth/slice';
 import { transactionsReducer } from './Transactions/slice';
 import { statisticsReducer } from './Statistics/slice';
-// import { currencyReducer } from './Currency/slice';
-// import { modalsReducer } from './Modals/slice';
+import { modalsReducer } from './Modals/slice'; // Importă reducer-ul pentru modals
 
 const authPersistConfig = {
   key: 'auth',
@@ -29,8 +28,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     transactions: transactionsReducer,
     statistics: statisticsReducer,
-    // currency: currencyReducer,
-    // modals: modalsReducer,
+    modals: modalsReducer, // Adaugă reducer-ul `modals`
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
@@ -41,4 +39,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-

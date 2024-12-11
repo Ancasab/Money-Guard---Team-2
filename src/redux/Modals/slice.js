@@ -1,4 +1,3 @@
-
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -17,12 +16,6 @@ const initialState = {
 const modalsSlice = createSlice({
     name: 'modals',
     initialState,
-    selectors: {
-        selectTransaction: state => state.transaction,
-        selectIsEditModalOpen: state => state.isEditModalOpen,
-        selectIsAddModalOpen: state => state.isAddModalOpen,
-        selectIsEditID: state => state.isEditId,
-    },
     reducers: {
         takeTransactionData: (state, { payload }) => {
             state.transaction = payload;
@@ -32,14 +25,14 @@ const modalsSlice = createSlice({
         },
         closeEditModal: state => {
             state.isEditModalOpen = false;
-            state = initialState;
+            Object.assign(state, initialState); // Resetare stări
         },
         openAddModal: state => {
             state.isAddModalOpen = true;
         },
         closeAddModal: state => {
             state.isAddModalOpen = false;
-            state = initialState;
+            Object.assign(state, initialState); // Resetare stări
         },
         addEditId: (state, { payload }) => {
             state.isEditId = payload;
@@ -47,7 +40,19 @@ const modalsSlice = createSlice({
     },
 });
 
+// Export reducer și acțiuni
 export const modalsReducer = modalsSlice.reducer;
-export const { takeTransactionData, openEditModal, closeEditModal, openAddModal, closeAddModal, addEditId } = modalsSlice.actions;
-export const { selectTransaction, selectIsEditModalOpen, selectIsAddModalOpen, selectIsEditID } = modalsSlice.selectors;
+export const {
+    takeTransactionData,
+    openEditModal,
+    closeEditModal,
+    openAddModal,
+    closeAddModal,
+    addEditId,
+} = modalsSlice.actions;
 
+// Selectorii exportați
+export const selectTransaction = state => state.modals.transaction;
+export const selectIsEditModalOpen = state => state.modals.isEditModalOpen;
+export const selectIsAddModalOpen = state => state.modals.isAddModalOpen;
+export const selectIsEditID = state => state.modals.isEditId;

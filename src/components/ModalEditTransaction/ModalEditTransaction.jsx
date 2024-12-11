@@ -1,111 +1,50 @@
-import React, { useState } from "react";
-import styles from "./ModalEditTransaction.module.css";
+import React, { useEffect } from 'react';
+import Modal from 'react-modal';
+import EditTransactionForm from '../EditTransactionForm/EditTransactionForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeEditModal, selectIsEditModalOpen } from '../../redux/Modals/slice';
+import { getTransactionsCategories } from '../../redux/Statistics/operations';
+import { updateBalance } from '../../redux/Auth/slice';
+import { selectBalance } from '../../redux/Auth/slice'; // Selector pentru balanță
 
-const EditTransactionModal = ({ transaction, onClose, onSave }) => {
-  const [transactionType, setTransactionType] = useState(transaction.type || "Income");
-  const [amount, setAmount] = useState(transaction.amount || "");
-  const [date, setDate] = useState(transaction.date || new Date().toISOString().split("T")[0]);
-  const [comment, setComment] = useState(transaction.comment || "");
-  const [category, setCategory] = useState("");
-  
-  const handleSave = () => {
-    onSave({
-      ...transaction,
-      type: transactionType,
-      amount,
-      date,
-      comment,
-    });
-    onClose();
-  };
+import s from './ModalEditTransaction.module.css';
 
-  return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.logo}></div>
-      <div className={styles.modalContainer}>
-        <button className={styles.closeButton} onClick={onClose}>
-          &times;
-        </button>
-        <h2 className={styles.title}>Edit Transaction</h2>
+Modal.setAppElement('#root');
 
-        <div className={styles.transactionTypeToggle}>
-          <button
-            className={`${styles.transactionTypeButton} ${
-              transactionType === "Income" ? styles.selectedIncome : ""
-            }`}
-            onClick={() => setTransactionType("Income")}
-          >
-            Income  
-          </button>
-          <span className={styles.span}>/</span>
-          <button
-            className={`${styles.transactionTypeButton} ${
-              transactionType === "Expense" ? styles.selectedExpense : ""
-            }`}
-            onClick={() => setTransactionType("Expense")}
-          >
-            Expense
-          </button>
-        </div>
-        <div className={styles.inputGroup}>
-  {transactionType === "Expense" && (
-    <select
-      className={styles.inputField}
-      value={category}
-      onChange={(e) => setCategory(e.target.value)}
-    >
-      <option value="">Select Category</option>
-      <option value="Main expenses">Main expenses</option>
-      <option value="Products">Products</option>
-      <option value="Car">Car</option>
-      <option value="Self care">Self care</option>
-      <option value="Child care">Child care</option>
-      <option value="Household products">Household products</option>
-      <option value="Education">Education</option>
-      <option value="Leisure">Leisure</option>
-    </select>
-  )}
-</div>
-        <div className={styles.inputGroup}>
-          <input
-            type="number"
-            className={styles.inputField}
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="0.00"
-          />
-        </div>
+function ModalEditTransaction() {
+    const dispatch = useDispatch();
+    const isOpenModal = useSelector(selectIsEditModalOpen);
 
-        <div className={styles.inputGroup}>
-          <input
-            type="date"
-            className={styles.inputField}
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </div>
+    // Obține balanța curentă din Redux
+    const balance = useSelector(selectBalance);
 
-        <div className={styles.inputGroup}>
-          <input
-            type="text"
-            className={styles.inputField}
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-            placeholder="Comment"
-          />
-        </div>
+    // Când modalul se deschide, obține categoriile
+    useEffect(() => {
+        dispatch(getTransactionsCategories());
+    }, [dispatch]);
 
-        <div className={styles.buttonGroup}>
-          <button className={styles.primaryButton} onClick={handleSave}>
-            SAVE
-          </button>
-          <button className={styles.secondaryButton} onClick={onClose}>
-            CANCEL
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+    const handleUpdateBalance = (newBalance) => {
+        // Actualizează balanța în Redux (dacă e nevoie)
+        dispatch(updateBalance(newBalance)); // Ai grijă ca updateBalance să fie definit corect în slice-ul tău
+    };
 
-export default EditTransactionModal;
+    return (
+        <Modal
+            isOpen={isOpenModal}
+            className={s.modal}
+            overlayClassName={s.modal_Wrap}
+            onRequestClose={() => dispatch(closeEditModal())}
+        >
+            <div className={s.modal_close} onClick={() => dispatch(closeEditModal())}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M1 1L17 17" stroke="#FBFBFB" />
+                    <path d="M1 17L17 0.999999" stroke="#FBFBFB" />
+                </svg>
+            </div>
+            <h2>Edit transaction</h2>
+            <EditTransactionForm currentBalance={balance} handleUpdateBalance={handleUpdateBalance} />
+        </Modal>
+    );
+}
+
+export default ModalEditTransaction;
