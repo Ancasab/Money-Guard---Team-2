@@ -157,16 +157,6 @@ body .container {
     font-weight: 400;
     line-height: normal;
   }
-  .chartWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  svg {
-    overflow: visible;
-  }
   
   .gbp {
     left: 48px;

@@ -118,7 +118,7 @@
 //     // }
 //     return (
 //         <Routes>
-//             <Route path="/dashboard" element={<SharedLayout />} />
+//             <Route path="/" element={<SharedLayout />} />
 //             <Route path="/currency" element={<CurrencyPage />} />
 //         </Routes>
 //     );
