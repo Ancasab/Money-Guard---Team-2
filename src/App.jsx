@@ -1,40 +1,38 @@
-
 //import React, { useState } from "react";
 //import AddTransactionModal from "./components/ModalAddTransaction/ModalAddTransaction";
 //import EditTransactionModal from "./components/ModalEditTransaction/ModalEditTransaction";
 
 //const App = () => {
-  //const [isAddModalOpen, setAddModalOpen] = useState(false);
-  //const [isEditModalOpen, setEditModalOpen] = useState(false);
+//const [isAddModalOpen, setAddModalOpen] = useState(false);
+//const [isEditModalOpen, setEditModalOpen] = useState(false);
 
- // return (
-    //<div>
-      //<button onClick={() => setAddModalOpen(true)}>Add Transaction</button>
-      //<button onClick={() => setEditModalOpen(true)}>Edit Transaction</button>
+// return (
+//<div>
+//<button onClick={() => setAddModalOpen(true)}>Add Transaction</button>
+//<button onClick={() => setEditModalOpen(true)}>Edit Transaction</button>
 
-      //{isAddModalOpen && <AddTransactionModal onClose={() => setAddModalOpen(false)} />}
-      //{isEditModalOpen && (
-  //<EditTransactionModal
-    //transaction={{
-     // type: "Income", 
-     // amount: "",
-     // date: new Date().toISOString().split("T")[0],
-     // comment: "",
-   // }}
-    //onClose={() => setEditModalOpen(false)}
-   // onSave={(updatedTransaction) => {
-     // console.log("Updated transaction:", updatedTransaction);
-     // setEditModalOpen(false);
-    //}}
-  // />
+//{isAddModalOpen && <AddTransactionModal onClose={() => setAddModalOpen(false)} />}
+//{isEditModalOpen && (
+//<EditTransactionModal
+//transaction={{
+// type: "Income",
+// amount: "",
+// date: new Date().toISOString().split("T")[0],
+// comment: "",
+// }}
+//onClose={() => setEditModalOpen(false)}
+// onSave={(updatedTransaction) => {
+// console.log("Updated transaction:", updatedTransaction);
+// setEditModalOpen(false);
+//}}
+// />
 //)}
 
-    //</div>
- // );
+//</div>
+// );
 //};
 
 //export default App;
-
 
 //App VERIFICARE LOGIN SI REGISTRATION//
 
@@ -56,11 +54,10 @@
 //      >
 //      {/* <LoginPage /> */}
 
-//         <RegistrationPage /> 
-        
+//         <RegistrationPage />
+
 //         {/* <LogOutModal />  */}
 
-      
 //     </div>
 //   );
 // };
@@ -72,7 +69,6 @@
 // import PublicRoute from './routes/PublicRoute';
 // import LoginPage from './pages/LoginPage/LoginPage';
 // import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
-
 
 // function App() {
 //     return (
@@ -125,7 +121,6 @@
 // };
 // export default App;
 
-
 //===App PENTRU TRANSACTIONS====
 
 // import AddTransactionForm from './components/AddTransactionForm/AddTransactionForm';
@@ -146,15 +141,13 @@
 //      >
 //      <TransactionsList />
 
-//    <AddTransactionForm /> 
+//    <AddTransactionForm />
 
-      
 //     </div>
 //   );
 // };
 
 // export default App;
-
 
 // === App PENTRU TOATE ELEMENTELE===//
 
@@ -256,7 +249,10 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import clsx from 'clsx';
-import { selectIsAddModalOpen, selectIsEditModalOpen } from './redux/Modals/slice';
+import {
+  selectIsAddModalOpen,
+  selectIsEditModalOpen,
+} from './redux/Modals/slice';
 import Loader from './components/Loader/Loader';
 
 const Home = lazy(() => import('./components/Home/Home'));
@@ -265,70 +261,70 @@ const Balance = lazy(() => import('./components/Balance/Balance'));
 const Currency = lazy(() => import('./components/Currency/Currency'));
 
 function App() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(refreshThunk());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
 
-    const { isMobile } = useMedia();
+  const { isMobile } = useMedia();
 
-    const isEditOpen = useSelector(selectIsEditModalOpen);
-    const isAddOpen = useSelector(selectIsAddModalOpen);
+  const isEditOpen = useSelector(selectIsEditModalOpen);
+  const isAddOpen = useSelector(selectIsAddModalOpen);
 
-    return (
-        <div className={clsx('app', (isEditOpen || isAddOpen) && 'block-scroll')}>
-            <Suspense fallback={<Loader />}>
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <PrivateRoute>
-                                <DashboardPage />
-                            </PrivateRoute>
-                        }
-                    >
-                        <Route
-                            index
-                            element={
-                                isMobile ? (
-                                    <>
-                                        <Balance />
-                                        <Home />
-                                    </>
-                                ) : (
-                                    <Home />
-                                )
-                            }
-                        />
-                        <Route path="statistics" element={<Statistics />} />
-                        <Route
-                            path="currency"
-                            element={isMobile ? <Currency /> : <Navigate to="/" />}
-                        />
-                    </Route>
-                    <Route
-                        path="login"
-                        element={
-                            <PublicRoute>
-                                <LoginPage />
-                            </PublicRoute>
-                        }
-                    />
-                    <Route
-                        path="register"
-                        element={
-                            <PublicRoute>
-                                <RegistrationPage />
-                            </PublicRoute>
-                        }
-                    />
+  return (
+    <div className={clsx('app', (isEditOpen || isAddOpen) && 'block-scroll')}>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PrivateRoute>
+                <DashboardPage />
+              </PrivateRoute>
+            }
+          >
+            <Route
+              index
+              element={
+                isMobile ? (
+                  <>
+                    <Balance />
+                    <Home />
+                  </>
+                ) : (
+                  <Home />
+                )
+              }
+            />
+            <Route path="statistics" element={<Statistics />} />
+            <Route
+              path="currency"
+              element={isMobile ? <Currency /> : <Navigate to="/" />}
+            />
+          </Route>
+          <Route
+            path="login"
+            element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <PublicRoute>
+                <RegistrationPage />
+              </PublicRoute>
+            }
+          />
 
-                    <Route path="*" element={<Navigate to="/" />} />
-                </Routes>
-            </Suspense>
-        </div>
-    );
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Suspense>
+    </div>
+  );
 }
 
 export default App;
