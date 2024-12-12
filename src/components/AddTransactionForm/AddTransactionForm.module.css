@@ -386,7 +386,9 @@ input[type='number']:focus {
 
 @media screen and (max-width: 767.98px) {
   .form {
-    width: 100%;
+    /* width: 100%; */
+    position: relative;
+    top: 0;
   }
 
   .switch__wrapper {
@@ -405,7 +407,7 @@ input[type='number']:focus {
     align-items: center;
     gap: 48px;
     width: 280px;
-    margin-bottom: 48px;
+    /* margin-bottom: 48px; */
   }
   .sum_wrap {
     width: 280px;
@@ -434,7 +436,7 @@ input[type='number']:focus {
   .comment {
     max-width: 280px;
     margin: 0 auto;
-    margin-bottom: 36px;
+    margin-bottom: 10px;
 
     &::after {
       bottom: 0px;
@@ -444,7 +446,7 @@ input[type='number']:focus {
   .comment_bottom {
     width: 280px;
     margin: 0 auto;
-    margin-bottom: 92px;
+    margin-bottom: 60px;
     padding: 0 20px;
 
     &::after {

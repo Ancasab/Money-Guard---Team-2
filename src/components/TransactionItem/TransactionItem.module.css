@@ -1,14 +1,32 @@
+/* .row {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 8px;
+  list-style: none;
+  color: var(--text-color);
+  right: 40px;
+  position: relative;
+} */
+/* .row_item {
+  flex: 1;
+  text-align: left;
+  min-width: 80px; /* Ajustează în funcție de necesități */
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 100px;
+}
 .row {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  gap: 8px;
-
-  color: var(--text-color);
-
-  position: relative;
+  justify-content: space-between;
+  list-style: none;
+  padding: 20px 0px;
+  /* width: 240px; */
 }
-
 .row::after {
   display: block;
   content: '';
@@ -24,12 +42,28 @@
   display: none;
 }
 
-.btn_edit {
+/* .btn_edit {
   display: flex;
+  vertical-align: middle;
+  align-items: center;
+  max-width: 25px;
+  min-width: 20px;
+} */
+.controls {
+  display: flex;
+  gap: 8px;
   justify-content: center;
   align-items: center;
+  min-width: 120px;
 }
 
+.btn_edit,
+.btn_delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+}
 .edit {
   stroke: var(--text-color);
   size: 14px;
@@ -84,6 +118,7 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.1);
     position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
     &::before {
       display: block;
@@ -97,11 +132,17 @@
     }
   }
   .row {
+    display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: 55px;
   }
 
   .row_item:nth-child(2n) {
     text-align: end;
+  }
+  .row_item:nth-child(2) {
+    text-overflow: unset;
   }
 }
 /* TABLET */
@@ -109,9 +150,8 @@
   .row {
     display: flex;
     align-items: center;
-    padding: 16px 20px;
-    gap: 8px;
-
+    /* padding: 16px 20px;
+    gap: 18px; */
     position: relative;
   }
 
@@ -154,6 +194,24 @@
     align-items: center;
   }
 }
-/* DESKTOP */
-@media only screen and (min-width: 1280px) {
+.row_item {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.row_item:first-child {
+  flex: 1.5;
+}
+.row_item:nth-child(2) {
+  flex: 1;
+}
+.row_item:nth-child(3) {
+  flex: 2;
+}
+.row_item:nth-child(4),
+.row_item:nth-child(5) {
+  flex: 1;
 }

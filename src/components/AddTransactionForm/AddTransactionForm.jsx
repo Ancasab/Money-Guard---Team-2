@@ -96,199 +96,200 @@ function AddTransactionForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-    <div className={s.switch__wrapper}>
-      {/* Income section */}
-      {!isChecked ? (
-        <span className={clsx(s.span_text, s.income_active)}>Income</span>
-      ) : (
-        <span className={s.span_text}>Income</span>
-      )}
-  
-      <label htmlFor="switch" className={s.switch}>
-        <input
-          {...register('switch')}
-          type="checkbox"
-          id="switch"
-          checked={isChecked}
-          onChange={handleChange}
-          className={s.switch__input}
-        />
-        {isChecked ? (
-          <span className={s.switch__slider}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="74"
-              height="74"
-              viewBox="0 0 74 74"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_61_794)">
-                <circle cx="37" cy="31" r="22" fill="#FF868D" />
-              </g>
-              <path d="M27 31L47 31" stroke="white" strokeWidth="2" />
-            </svg>
-          </span>
+      <div className={s.switch__wrapper}>
+        {/* Income section */}
+        {!isChecked ? (
+          <span className={clsx(s.span_text, s.income_active)}>Income</span>
         ) : (
-          <span className={s.switch__slider}>
+          <span className={s.span_text}>Income</span>
+        )}
+
+        <label htmlFor="switch" className={s.switch}>
+          <input
+            {...register('switch')}
+            type="checkbox"
+            id="switch"
+            checked={isChecked}
+            onChange={handleChange}
+            className={s.switch__input}
+          />
+          {isChecked ? (
+            <span className={s.switch__slider}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="74"
+                height="74"
+                viewBox="0 0 74 74"
+                fill="none"
+              >
+                <g filter="url(#filter0_d_61_794)">
+                  <circle cx="37" cy="31" r="22" fill="#FF868D" />
+                </g>
+                <path d="M27 31L47 31" stroke="white" strokeWidth="2" />
+              </svg>
+            </span>
+          ) : (
+            <span className={s.switch__slider}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="74"
+                height="74"
+                viewBox="0 0 74 74"
+                fill="none"
+              >
+                <g filter="url(#filter0_d_60_139)">
+                  <circle cx="37" cy="31" r="22" fill="#FFB627" />
+                </g>
+                <path d="M37 21V41" stroke="#FBFBFB" strokeWidth="2" />
+                <path d="M27 31L47 31" stroke="#FBFBFB" strokeWidth="2" />
+              </svg>
+            </span>
+          )}
+        </label>
+
+        {/* Expense section */}
+        {isChecked ? (
+          <span className={clsx(s.span_text, s.expense_active)}>Expense</span>
+        ) : (
+          <span className={s.span_text}>Expense</span>
+        )}
+      </div>
+
+      {/* Dropdown pentru Income */}
+      {!isChecked && (
+        <div className={s.comment}>
+          <Select
+            classNamePrefix="react-select"
+            styles={customStyles}
+            className={s.select_form}
+            defaultValue={selectDefaultValue}
+            onChange={setSelectedOption}
+            options={categoriesForSelect}
+            placeholder="Select a category"
+            onMenuOpen={handleMenuOpen}
+            onMenuClose={handleMenuClose}
+            components={{
+              DropdownIndicator: () => {
+                return menuIsOpen ? (
+                  <CustomDropIndicator up={true} />
+                ) : (
+                  <CustomDropIndicator up={false} />
+                );
+              },
+            }}
+          />
+        </div>
+      )}
+
+      {/* Dropdown pentru Expense */}
+      {isChecked && (
+        <div className={s.comment}>
+          <Select
+            classNamePrefix="react-select"
+            styles={customStyles}
+            className={s.select_form}
+            defaultValue={selectDefaultValue}
+            onChange={setSelectedOption}
+            options={categoriesForSelect}
+            placeholder="Select a category"
+            onMenuOpen={handleMenuOpen}
+            onMenuClose={handleMenuClose}
+            components={{
+              DropdownIndicator: () => {
+                return menuIsOpen ? (
+                  <CustomDropIndicator up={true} />
+                ) : (
+                  <CustomDropIndicator up={false} />
+                );
+              },
+            }}
+          />
+        </div>
+      )}
+
+      {/* Restul formularului */}
+      <div className={s.sum_data_wrap}>
+        <div className={s.sum_wrap}>
+          <input
+            {...register('amount')}
+            type="number"
+            autoComplete="off"
+            placeholder="0.00"
+            className={s.sum}
+          />
+          {errors.amount && (
+            <span className={s.comment_err}>{'Enter a number'}</span>
+          )}
+        </div>
+        <div className={s.data_wrap} onClick={() => setIsDatePickerOpen(true)}>
+          <Controller
+            name="transactionDate"
+            control={control}
+            render={({ field }) => (
+              <>
+                <DatePicker
+                  selected={field.value || currentDate}
+                  onChange={date => field.onChange(date)}
+                  dateFormat="dd.MM.yyyy"
+                  open={isDatePickerOpen}
+                  onClickOutside={() => setIsDatePickerOpen(false)}
+                  className={s.customDatePicker}
+                  calendarClassName={s.calendarClassName}
+                  maxDate={currentDate}
+                />
+              </>
+            )}
+          />
+          <div className={s.svg_wrap}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="74"
-              height="74"
-              viewBox="0 0 74 74"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               fill="none"
             >
-              <g filter="url(#filter0_d_60_139)">
-                <circle cx="37" cy="31" r="22" fill="#FFB627" />
+              <g clipPath="url(#clip0_60_133)">
+                <path
+                  d="M9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM19 4H18V2H16V4H8V2H6V4H5C3.89 4 3.01 4.9 3.01 6L3 20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4ZM19 20H5V9H19V20Z"
+                  fill="#734AEF"
+                />
               </g>
-              <path d="M37 21V41" stroke="#FBFBFB" strokeWidth="2" />
-              <path d="M27 31L47 31" stroke="#FBFBFB" strokeWidth="2" />
+              <defs>
+                <clipPath id="clip0_60_133">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
             </svg>
-          </span>
-        )}
-      </label>
-  
-      {/* Expense section */}
-      {isChecked ? (
-        <span className={clsx(s.span_text, s.expense_active)}>Expense</span>
-      ) : (
-        <span className={s.span_text}>Expense</span>
-      )}
-    </div>
-  
-    {/* Dropdown pentru Income */}
-    {!isChecked && (
-      <div className={s.comment}>
-        <Select
-          classNamePrefix="react-select"
-          styles={customStyles}
-          className={s.select_form}
-          defaultValue={selectDefaultValue}
-          onChange={setSelectedOption}
-          options={categoriesForSelect}
-          placeholder="Select a category"
-          onMenuOpen={handleMenuOpen}
-          onMenuClose={handleMenuClose}
-          components={{
-            DropdownIndicator: () => {
-              return menuIsOpen ? (
-                <CustomDropIndicator up={true} />
-              ) : (
-                <CustomDropIndicator up={false} />
-              );
-            },
-          }}
-        />
-      </div>
-    )}
-  
-    {/* Dropdown pentru Expense */}
-    {isChecked && (
-      <div className={s.comment}>
-        <Select
-          classNamePrefix="react-select"
-          styles={customStyles}
-          className={s.select_form}
-          defaultValue={selectDefaultValue}
-          onChange={setSelectedOption}
-          options={categoriesForSelect}
-          placeholder="Select a category"
-          onMenuOpen={handleMenuOpen}
-          onMenuClose={handleMenuClose}
-          components={{
-            DropdownIndicator: () => {
-              return menuIsOpen ? (
-                <CustomDropIndicator up={true} />
-              ) : (
-                <CustomDropIndicator up={false} />
-              );
-            },
-          }}
-        />
-      </div>
-    )}
-  
-    {/* Restul formularului */}
-    <div className={s.sum_data_wrap}>
-      <div className={s.sum_wrap}>
-        <input
-          {...register('amount')}
-          type="number"
-          autoComplete="off"
-          placeholder="0.00"
-          className={s.sum}
-        />
-        {errors.amount && (
-          <span className={s.comment_err}>{'Enter a number'}</span>
-        )}
-      </div>
-      <div className={s.data_wrap} onClick={() => setIsDatePickerOpen(true)}>
-        <Controller
-          name="transactionDate"
-          control={control}
-          render={({ field }) => (
-            <>
-              <DatePicker
-                selected={field.value || currentDate}
-                onChange={date => field.onChange(date)}
-                dateFormat="dd.MM.yyyy"
-                open={isDatePickerOpen}
-                onClickOutside={() => setIsDatePickerOpen(false)}
-                className={s.customDatePicker}
-                calendarClassName={s.calendarClassName}
-                maxDate={currentDate}
-              />
-            </>
-          )}
-        />
-        <div className={s.svg_wrap}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <g clipPath="url(#clip0_60_133)">
-              <path
-                d="M9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM19 4H18V2H16V4H8V2H6V4H5C3.89 4 3.01 4.9 3.01 6L3 20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4ZM19 20H5V9H19V20Z"
-                fill="#734AEF"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_60_133">
-                <rect width="24" height="24" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
+          </div>
         </div>
       </div>
-    </div>
-  
-    <div className={clsx(s.comment_bottom)}>
-      <input
-        {...register('comment')}
-        type="text"
-        className={s.input}
-        placeholder="Comment"
-        autoComplete="off"
-      />
-      {errors.comment && (
-        <span className={s.comment_err}>{'Enter a comment'}</span>
-      )}
-    </div>
-  
-    <button className={clsx(s.btn, s.btn_add)} type="submit">
-      Add
-    </button>
-    <button
-      className={clsx(s.btn, s.btn_cancel)}
-      type="button"
-      onClick={() => {
-        dispatch(closeAddModal());
-      }}
-    >
-      Cancel
-    </button>
-  </form>
-  )};  
+
+      <div className={clsx(s.comment_bottom)}>
+        <input
+          {...register('comment')}
+          type="text"
+          className={s.input}
+          placeholder="Comment"
+          autoComplete="off"
+        />
+        {errors.comment && (
+          <span className={s.comment_err}>{'Enter a comment'}</span>
+        )}
+      </div>
+
+      <button className={clsx(s.btn, s.btn_add)} type="submit">
+        Add
+      </button>
+      <button
+        className={clsx(s.btn, s.btn_cancel)}
+        type="button"
+        onClick={() => {
+          dispatch(closeAddModal());
+        }}
+      >
+        Cancel
+      </button>
+    </form>
+  );
+}
 export default AddTransactionForm;

@@ -4,7 +4,6 @@ export function getFormattedTransactions(transactions, categories) {
     .toSorted((a, b) => b.date.localeCompare(a.date));
 }
 function getFormattedTransaction(transaction, categories) {
-  console.log('Formatted Transactions:', transaction);
   const {
     transactionDate: date,
     amount: sum,
