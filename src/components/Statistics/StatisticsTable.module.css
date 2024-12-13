@@ -32,7 +32,10 @@
 .first_column {
   display: flex;
 }
-
+.list_ts {
+  list-style: none;
+  padding-left: 0px;
+}
 .span_indicator {
   display: inline-block;
   width: 24px;
@@ -52,8 +55,10 @@
 
 .expense {
   color: #ff868d;
+  padding-top: 15px;
 }
 
 .income {
   color: #ffb627;
+  padding-top: 15px;
 }
