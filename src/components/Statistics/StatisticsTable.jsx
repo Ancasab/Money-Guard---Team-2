@@ -8,7 +8,7 @@ const StatisticsTable = ({ data, expenseTotal, incomeTotal }) => {
         <p>Sum</p>
       </div>
       <div className={s.list_wrapper}>
-        <ul>
+        <ul className={s.list_ts}>
           {data.length
             ? data.map((category, index) => (
                 <li key={index}>

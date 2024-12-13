@@ -28,7 +28,7 @@
 
 @media only screen and (min-width: 1280px) {
   .select {
-    min-width: 180px;
+    min-width: 150px;
   }
   .selectContainer {
     gap: 32px;
