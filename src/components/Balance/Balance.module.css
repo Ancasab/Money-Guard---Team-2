@@ -40,11 +40,15 @@
     width: 336px;
     padding: 8px 40px 11.2px 40px;
     align-self: start;
+    left: -350px;
+    top: 120px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .balance {
-    width: 480px;
+    width: 600px;
+    left: 10px;
+    top: 0px;
   }
 }

@@ -1,7 +1,7 @@
-import styles from "./Currency.module.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import styles from './Currency.module.css';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 const Currency = () => {
   const [data, setData] = useState(null);
@@ -10,21 +10,21 @@ const Currency = () => {
     const fetchDataAndStore = async () => {
       try {
         const response = await axios.get(
-          "https://openexchangerates.org/api/latest.json?app_id=db45438d2f2f4a75b5a6d5ac8236394e"
+          'https://openexchangerates.org/api/latest.json?app_id=db45438d2f2f4a75b5a6d5ac8236394e'
         );
         const newData = response.data;
         const fetchTime = new Date().getTime();
         localStorage.setItem(
-          "MONO",
+          'MONO',
           JSON.stringify({ data: newData, fetchTime })
         );
         setData(newData);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
 
-    const storedData = localStorage.getItem("MONO");
+    const storedData = localStorage.getItem('MONO');
     if (storedData) {
       const { data, fetchTime } = JSON.parse(storedData);
       const currentTime = new Date().getTime();
@@ -38,25 +38,25 @@ const Currency = () => {
     }
   }, []);
 
-  const rateGBP = data?.rates["GBP"];
-  const rateEUR = data?.rates["EUR"];
-  const rateBuyGBP = rateGBP ? rateGBP.toFixed(2) : "N/A";
-  const rateSellGBP = rateGBP ? (1 / rateGBP).toFixed(2) : "N/A";
-  const rateBuyEUR = rateEUR ? rateEUR.toFixed(2) : "N/A";
-  const rateSellEUR = rateEUR ? (1 / rateEUR).toFixed(2) : "N/A";
+  const rateGBP = data?.rates['GBP'];
+  const rateEUR = data?.rates['EUR'];
+  const rateBuyGBP = rateGBP ? rateGBP.toFixed(2) : 'N/A';
+  const rateSellGBP = rateGBP ? (1 / rateGBP).toFixed(2) : 'N/A';
+  const rateBuyEUR = rateEUR ? rateEUR.toFixed(2) : 'N/A';
+  const rateSellEUR = rateEUR ? (1 / rateEUR).toFixed(2) : 'N/A';
 
   const isMobile = useMediaQuery({
-    query: "(max-width: 767px)",
+    query: '(max-width: 767.98px)',
   });
   const isMinTablet = useMediaQuery({
-    query: "(min-width: 768px)",
+    query: '(min-width: 768px)',
   });
 
   const isMaxTablet = useMediaQuery({
-    query: "(max-width: 1279px)",
+    query: '(max-width: 1279px)',
   });
   const isDesktop = useMediaQuery({
-    query: "(min-width: 1280px)",
+    query: '(min-width: 1280px)',
   });
 
   return (
@@ -147,7 +147,7 @@ const Currency = () => {
           </svg>
         </div>
       ) : (
-        ""
+        ''
       )}
       {isMinTablet & isMaxTablet ? (
         <div className={styles.tablegraph}>
@@ -213,7 +213,7 @@ const Currency = () => {
           </svg>
         </div>
       ) : (
-        ""
+        ''
       )}
       {isDesktop ? (
         <div className={styles.tablegraph}>
@@ -281,7 +281,7 @@ const Currency = () => {
           </svg>
         </div>
       ) : (
-        ""
+        ''
       )}
     </div>
   );

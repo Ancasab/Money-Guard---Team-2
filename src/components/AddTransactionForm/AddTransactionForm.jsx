@@ -156,7 +156,7 @@ function AddTransactionForm() {
       </div>
 
       {/* Dropdown pentru Income */}
-      {!isChecked && (
+      {/* {!isChecked && (
         <div className={s.comment}>
           <Select
             classNamePrefix="react-select"
@@ -179,7 +179,7 @@ function AddTransactionForm() {
             }}
           />
         </div>
-      )}
+      )} */}
 
       {/* Dropdown pentru Expense */}
       {isChecked && (

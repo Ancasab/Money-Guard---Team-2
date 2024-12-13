@@ -63,7 +63,9 @@ div.navigation {
     gap: 12px;
     align-self: start;
   }
-
+  .navLink .linkIcon .dollarIcon {
+    display: none;
+  }
   .navLink {
     display: flex;
     align-items: center;
@@ -71,9 +73,9 @@ div.navigation {
     gap: 23px;
   }
 
-  /* .navLink.currencyLink {
+  .navLink.currencyLink {
     display: none;
-  } */
+  }
 
   .navLink .linkText {
     display: block;
