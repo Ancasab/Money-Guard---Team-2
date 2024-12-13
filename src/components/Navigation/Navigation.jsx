@@ -36,7 +36,9 @@ const Navigation = () => {
       <NavLink
         to="currency"
         className={({ isActive }) =>
-          isActive ? `${styles.navLink} ${styles.active}` : `${styles.navLink} `
+          isActive
+            ? `${styles.navLink} ${styles.active}`
+            : `${styles.navLink} ${styles.currencyLink}`
         }
       >
         <div className={styles.linkIcon}>

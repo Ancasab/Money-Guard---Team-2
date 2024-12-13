@@ -6,15 +6,11 @@ body .container {
 .tablewrapper {
   position: relative;
   background-color: rgba(74, 86, 226, 0.1);
-  padding-top: 25px;
+  /* padding-top: 25px; */
   width: 320px;
   height: 220px;
   margin: 0 auto;
-
-  @media only screen and (min-width: 768px) {
-    min-width: 336px;
-    margin: 0;
-  }
+  top: 20px;
 
   @media only screen and (min-width: 1280px) {
     width: 100%;
@@ -32,6 +28,13 @@ body .container {
   padding-left: 20px;
 }
 
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .tablewrapper {
+    padding-top: 0px;
+    right: -350px;
+    top: -128px;
+  }
+}
 .tablehead {
   background: rgba(255, 255, 255, 0.2);
   font-weight: 600;
