@@ -13,6 +13,9 @@
   text-align: left;
   min-width: 80px; /* Ajustează în funcție de necesități */
 
+.btn_write {
+  display: none;
+}
 .controls {
   display: flex;
   justify-content: space-between;
@@ -56,7 +59,10 @@
   align-items: center;
   min-width: 120px;
 }
-
+.btn_edit {
+  background-color: transparent;
+  border: none;
+}
 .btn_edit,
 .btn_delete {
   display: inline-flex;
@@ -134,7 +140,7 @@
   }
   .btn_edit {
     padding: 0px;
-    max-width: 30px;
+    max-width: 50px;
     margin-left: 40px;
   }
   .btn_delete {

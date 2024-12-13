@@ -7,13 +7,17 @@ import {
   refreshThunk,
   getBalanceThunk,
 } from '../../redux/Auth/operations';
-import { addTransactions, deleteTransactions, editTransactions } from '../../redux/Transactions/operations';
+import {
+  addTransactions,
+  deleteTransactions,
+  editTransactions,
+} from '../../redux/Transactions/operations';
 
 const initialState = {
   user: {
     name: null,
     email: null,
-    balance: 0,  // Inițializează balanța cu 0
+    balance: 0, // Inițializează balanța cu 0
   },
   token: null,
   isLoggedIn: false,
@@ -30,17 +34,17 @@ const slice = createSlice({
       state.user.balance = action.payload;
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
       .addCase(logoutThunk.fulfilled, () => {
         return initialState;
       })
-      .addCase(refreshThunk.pending, (state) => {
+      .addCase(refreshThunk.pending, state => {
         state.isRefreshing = true;
         state.isAuthLoading = true;
         state.isLoggedIn = true;
       })
-      .addCase(refreshThunk.rejected, (state) => {
+      .addCase(refreshThunk.rejected, state => {
         state.isRefreshing = false;
         state.isAuthLoading = false;
         state.isLoggedIn = false;
@@ -76,21 +80,38 @@ const slice = createSlice({
       })
       .addCase(editTransactions.fulfilled, (state, { payload }) => {
         const { oldTransaction, newTransaction } = payload;
-    
+
         // Ajustează balanța scăzând suma tranzacției vechi și adăugând suma noii tranzacții
-        if (oldTransaction.type === 'income') {
+        // if (oldTransaction.type === 'income') {
+        //     state.user.balance -= oldTransaction.sum;
+        // } else if (oldTransaction.type === 'expense') {
+        //     state.user.balance += oldTransaction.sum;
+        // }
+
+        // if (newTransaction.type === 'income') {
+        //     state.user.balance += newTransaction.sum;
+        // } else if (newTransaction.type === 'expense') {
+        //     state.user.balance -= newTransaction.sum;
+        // }
+        if (oldTransaction && oldTransaction.type) {
+          // Ajustează balanța pentru tranzacția veche
+          if (oldTransaction.type === 'income') {
             state.user.balance -= oldTransaction.sum;
-        } else if (oldTransaction.type === 'expense') {
+          } else if (oldTransaction.type === 'expense') {
             state.user.balance += oldTransaction.sum;
+          }
         }
-    
-        if (newTransaction.type === 'income') {
+
+        if (newTransaction && newTransaction.type) {
+          // Ajustează balanța pentru tranzacția nouă
+          if (newTransaction.type === 'income') {
             state.user.balance += newTransaction.sum;
-        } else if (newTransaction.type === 'expense') {
+          } else if (newTransaction.type === 'expense') {
             state.user.balance -= newTransaction.sum;
+          }
         }
-    })
-     .addMatcher(
+      })
+      .addMatcher(
         isAnyOf(loginThunk.fulfilled, registerThunk.fulfilled),
         (state, { payload }) => {
           state.user.name = payload.user.username;
@@ -102,7 +123,7 @@ const slice = createSlice({
           state.isAuthError = null;
         }
       )
-      .addMatcher(isAnyOf(loginThunk.pending, registerThunk.pending), (state) => {
+      .addMatcher(isAnyOf(loginThunk.pending, registerThunk.pending), state => {
         state.isAuthLoading = true;
         state.isAuthError = null;
       })
@@ -118,4 +139,4 @@ const slice = createSlice({
 
 export const authReducer = slice.reducer;
 export const { updateBalance } = slice.actions;
-export const selectBalance = (state) => state.auth.user.balance; // Selector pentru balanță
+export const selectBalance = state => state.auth.user.balance; // Selector pentru balanță
