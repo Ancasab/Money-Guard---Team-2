@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Money-Guard---Team-2/static/css/main.34e214cf.css",
-    "main.js": "/Money-Guard---Team-2/static/js/main.e485c1fc.js",
-    "static/css/996.1b3d05a9.chunk.css": "/Money-Guard---Team-2/static/css/996.1b3d05a9.chunk.css",
+    "main.css": "/Money-Guard---Team-2/static/css/main.cb19cac5.css",
+    "main.js": "/Money-Guard---Team-2/static/js/main.b2d360ea.js",
+    "static/css/996.44bc763c.chunk.css": "/Money-Guard---Team-2/static/css/996.44bc763c.chunk.css",
     "static/js/996.561ae04f.chunk.js": "/Money-Guard---Team-2/static/js/996.561ae04f.chunk.js",
     "static/css/542.7789aecb.chunk.css": "/Money-Guard---Team-2/static/css/542.7789aecb.chunk.css",
     "static/js/542.671b09ab.chunk.js": "/Money-Guard---Team-2/static/js/542.671b09ab.chunk.js",
@@ -14,16 +14,16 @@
     "static/media/register-tablet.webp": "/Money-Guard---Team-2/static/media/register-tablet.696e30de300d4432b3ec.webp",
     "static/media/sprite.svg": "/Money-Guard---Team-2/static/media/sprite.fcc7df84ef748aeb2a3de0d754515911.svg",
     "index.html": "/Money-Guard---Team-2/index.html",
-    "main.34e214cf.css.map": "/Money-Guard---Team-2/static/css/main.34e214cf.css.map",
-    "main.e485c1fc.js.map": "/Money-Guard---Team-2/static/js/main.e485c1fc.js.map",
-    "996.1b3d05a9.chunk.css.map": "/Money-Guard---Team-2/static/css/996.1b3d05a9.chunk.css.map",
+    "main.cb19cac5.css.map": "/Money-Guard---Team-2/static/css/main.cb19cac5.css.map",
+    "main.b2d360ea.js.map": "/Money-Guard---Team-2/static/js/main.b2d360ea.js.map",
+    "996.44bc763c.chunk.css.map": "/Money-Guard---Team-2/static/css/996.44bc763c.chunk.css.map",
     "996.561ae04f.chunk.js.map": "/Money-Guard---Team-2/static/js/996.561ae04f.chunk.js.map",
     "542.7789aecb.chunk.css.map": "/Money-Guard---Team-2/static/css/542.7789aecb.chunk.css.map",
     "542.671b09ab.chunk.js.map": "/Money-Guard---Team-2/static/js/542.671b09ab.chunk.js.map",
     "58.98b1dba5.chunk.js.map": "/Money-Guard---Team-2/static/js/58.98b1dba5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34e214cf.css",
-    "static/js/main.e485c1fc.js"
+    "static/css/main.cb19cac5.css",
+    "static/js/main.b2d360ea.js"
   ]
 }
