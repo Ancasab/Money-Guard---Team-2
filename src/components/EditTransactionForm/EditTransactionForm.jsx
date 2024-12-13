@@ -141,7 +141,7 @@ function EditTransactionForm() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
         {isChecked && (
           <div className={s.comment}>{selectDefaultValue.label}</div>
         )}

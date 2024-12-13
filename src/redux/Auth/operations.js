@@ -1,16 +1,25 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { userTransactionsApi, setToken, removeToken } from '../../config/userTransactionApi';
+import {
+  userTransactionsApi,
+  setToken,
+  removeToken,
+} from '../../config/userTransactionApi';
 // import { updateBalance } from './slice';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await userTransactionsApi.post('/api/auth/sign-up', credentials);
-      setToken(data.token);  // Store token on successful sign-up
+      const { data } = await userTransactionsApi.post(
+        '/api/auth/sign-up',
+        credentials
+      );
+      setToken(data.token); // Store token on successful sign-up
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response?.data?.message || 'Registration failed');
+      return thunkAPI.rejectWithValue(
+        error.response?.data?.message || 'Registration failed'
+      );
     }
   }
 );
@@ -19,11 +28,16 @@ export const loginThunk = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await userTransactionsApi.post('/api/auth/sign-in', credentials);
-      setToken(data.token);  // Store token on successful login
+      const { data } = await userTransactionsApi.post(
+        '/api/auth/sign-in',
+        credentials
+      );
+      setToken(data.token); // Store token on successful login
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response?.data?.message || 'Login failed');
+      return thunkAPI.rejectWithValue(
+        error.response?.data?.message || 'Login failed'
+      );
     }
   }
 );
@@ -33,10 +47,12 @@ export const logoutThunk = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       await userTransactionsApi.delete('/api/auth/sign-out');
-      removeToken();  // Clear token on logout
+      removeToken(); // Clear token on logout
       return;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response?.data?.message || 'Logout failed');
+      return thunkAPI.rejectWithValue(
+        error.response?.data?.message || 'Logout failed'
+      );
     }
   }
 );
@@ -46,7 +62,7 @@ export const refreshThunk = createAsyncThunk(
   async (_, thunkAPI) => {
     const savedToken = thunkAPI.getState().auth.token;
     if (savedToken) {
-      setToken(savedToken);  // Set token if it exists in state
+      setToken(savedToken); // Set token if it exists in state
     } else {
       return thunkAPI.rejectWithValue("Token doesn't exist");
     }
@@ -55,19 +71,24 @@ export const refreshThunk = createAsyncThunk(
       const { data } = await userTransactionsApi.get('/api/users/current');
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response?.data?.message || 'Failed to refresh user data');
+      return thunkAPI.rejectWithValue(
+        error.response?.data?.message || 'Failed to refresh user data'
+      );
     }
   }
 );
 
-export const getBalanceThunk = createAsyncThunk('getBalance', async (_, thunkApi) => {
-  try {
+export const getBalanceThunk = createAsyncThunk(
+  'getBalance',
+  async (_, thunkApi) => {
+    try {
       const { data } = await userTransactionsApi.get('/api/users/current');
       return data.balance;
-  } catch (error) {
+    } catch (error) {
       return thunkApi.rejectWithValue(error.message);
+    }
   }
-});
+);
 // import { createAsyncThunk } from '@reduxjs/toolkit';
 // import { userTransactionsApi, setToken, removeToken } from '../../config/userTransactionApi';
 
