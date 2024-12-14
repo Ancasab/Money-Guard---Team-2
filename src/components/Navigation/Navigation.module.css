@@ -127,6 +127,7 @@ div.navigation {
     height: 22px;
     background-color: transparent;
     fill: grey;
+    
   }
   .linkIcon .dollarIcon {
     width: 26px;
@@ -134,6 +135,10 @@ div.navigation {
     background-color: transparent;
     fill: gray;
     display: block;
+  }
+  div.navigation {
+    margin-bottom: 30px;
+
   }
 }
 .dollarIcon {

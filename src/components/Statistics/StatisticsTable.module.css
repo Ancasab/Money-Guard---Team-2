@@ -47,6 +47,7 @@
 .table_bottom {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   padding: 16px 16px 8px 16px;
 
   font-weight: 600;
@@ -55,10 +56,10 @@
 
 .expense {
   color: #ff868d;
-  padding-top: 15px;
+  
 }
 
 .income {
   color: #ffb627;
-  padding-top: 15px;
+  
 }
