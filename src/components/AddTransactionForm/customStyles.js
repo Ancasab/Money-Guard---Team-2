@@ -1,4 +1,12 @@
 export const customStyles = {
+  placeholder: provided => ({
+    ...provided,
+    color: '#rgba(255, 255, 255, 0.6)',
+    fontSize: '18px',
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+    lineHeight: '27px',
+  }),
   option: provided => {
     return {
       ...provided,
