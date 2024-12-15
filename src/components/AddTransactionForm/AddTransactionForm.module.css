@@ -1,11 +1,18 @@
 .switch__wrapper {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  /* gap: 20px; */
+  justify-content: space-between;
+  /* justify-content: center; */
   align-items: center;
-  margin-bottom: 42px;
+  /* margin-bottom: 42px; */
+  width: 100%;
 }
-
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Asigură-te că formularul ocupă întreg spațiul containerului */
+}
 .switch {
   background-color: black;
   width: 80px;
@@ -29,6 +36,7 @@
   bottom: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .switch__slider svg {
@@ -55,9 +63,15 @@
 
 .income_active,
 .expense_active {
+  font-weight: bold;
+  text-align: center;
   transition: color 0.4s;
 }
 
+.switch__wrapper span {
+  flex: 1;
+  text-align: center;
+}
 .income_active {
   color: #ffb627;
 }
@@ -168,6 +182,9 @@ input[type='number']:focus {
 .customDatePicker {
   cursor: pointer;
 }
+.customDatePicker h2 {
+  color: black;
+}
 .svg_wrap {
   display: flex;
   align-items: center;
@@ -178,6 +195,7 @@ input[type='number']:focus {
   max-width: 394px;
   position: relative;
   margin-bottom: 48px;
+  width: 100%;
 
   .input {
     width: 100%;
@@ -387,81 +405,93 @@ input[type='number']:focus {
 @media screen and (max-width: 767.98px) {
   .form {
     /* width: 100%; */
-    position: relative;
-    top: 0;
-  }
-
-  .switch__wrapper {
-    margin-bottom: 30px;
-  }
-
-  .select_form {
-    width: 100%;
-  }
-
-  .sum_data_wrap {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-    width: 280px;
-    /* margin-bottom: 48px; */
-  }
-  .sum_wrap {
-    width: 280px;
-    padding: 0 20px;
-  }
-
-  .sum {
-    padding: 20px;
-    text-align: left;
-  }
-  .sum::placeholder {
-    text-align: left;
-  }
-
-  .data_wrap {
-    width: 280px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-
-  .customDatePicker {
-    width: 100%;
-  }
-
-  .comment {
-    max-width: 280px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-
-    &::after {
-      bottom: 0px;
-    }
-  }
-
-  .comment_bottom {
-    width: 280px;
-    margin: 0 auto;
-    margin-bottom: 60px;
-    padding: 0 20px;
-
-    &::after {
-      bottom: -52px;
-    }
-    .input {
-      width: 100%;
-    }
-  }
-
-  .btn {
-    width: 280px;
-  }
-  .calendarClassName {
+    /* position: relative;
+    top: 0; */
+    padding: 0 16px;
     position: absolute;
-    left: -78px;
+    left: 0px;
+    top: 100px;
   }
+}
+.expense_active .comment {
+  position: absolute;
+  left: 100px;
+}
+.switch__wrapper {
+  margin-bottom: 30px;
+}
+.sum_wrap {
+  margin-top: 10px;
+}
+.select_form {
+  width: 100%;
+}
+h2 {
+  margin-top: 0px;
+}
+.sum_data_wrap {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  width: 280px;
+  /* margin-bottom: 48px; */
+}
+.sum_wrap {
+  width: 280px;
+  padding: 0 20px;
+}
+
+.sum {
+  padding: 20px;
+  text-align: left;
+}
+.sum::placeholder {
+  text-align: left;
+}
+
+.data_wrap {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.customDatePicker {
+  width: 100%;
+}
+
+.comment {
+  max-width: 280px;
+  margin: 0 auto;
+  /* margin-bottom: 10px; */
+
+  &::after {
+    bottom: 0px;
+  }
+}
+
+.comment_bottom {
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  /* padding: 0 20px; */
+  margin-top: 30px;
+
+  &::after {
+    bottom: -52px;
+  }
+  .input {
+    width: 100%;
+  }
+}
+
+.btn {
+  width: 280px;
+}
+.calendarClassName {
+  position: absolute;
+  left: -78px;
 }

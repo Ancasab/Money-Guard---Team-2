@@ -30,9 +30,9 @@ function AddTransactionForm() {
     label: category.name,
   }));
 
-  const selectDefaultValue = categoriesForSelect.find(
-    item => item.label === 'Main expenses'
-  );
+  // const selectDefaultValue = categoriesForSelect.find(
+  //   item => item.label === 'Main expenses'
+  // );
 
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -188,7 +188,7 @@ function AddTransactionForm() {
             classNamePrefix="react-select"
             styles={customStyles}
             className={s.select_form}
-            defaultValue={selectDefaultValue}
+            defaultValue={null}
             onChange={setSelectedOption}
             options={categoriesForSelect}
             placeholder="Select a category"
