@@ -10,8 +10,11 @@
 
 @media only screen and (max-width: 767.98px) {
   .selectContainer {
-    width: 280px;
+    width: 300px;
     margin-top: 32px;
+  }
+  .select {
+    width: 300px;
   }
 }
 
