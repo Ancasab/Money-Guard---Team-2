@@ -123,7 +123,7 @@ function AddTransactionForm() {
                 fill="none"
               >
                 <g filter="url(#filter0_d_61_794)">
-                  <circle cx="37" cy="31" r="22" fill="#FF868D" />
+                  <circle cx="37" cy="31" r="22" fill="#FFB627" />
                 </g>
                 <path d="M27 31L47 31" stroke="white" strokeWidth="2" />
               </svg>
