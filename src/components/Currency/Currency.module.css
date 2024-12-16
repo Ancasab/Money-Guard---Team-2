@@ -32,7 +32,10 @@ body .container {
   .tablewrapper {
     padding-top: 0px;
     right: -350px;
-    top: -128px;
+    top: -124px;
+  }
+  .table {
+    margin-top: 2px;
   }
 }
 .tablehead {
