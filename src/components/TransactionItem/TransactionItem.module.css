@@ -145,6 +145,7 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     /* margin-right: 85px; */
+    padding-left: 20px;
   }
   .row_item {
     font-style: normal;
@@ -155,6 +156,7 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    /* padding: 20px; */
 
     color: white;
   }
@@ -174,8 +176,8 @@
   .row {
     display: flex;
     align-items: center;
-    /* padding: 16px 20px;
-    gap: 18px; */
+    /* padding: 16px 16px; */
+    /* gap: 18px; */
     position: relative;
   }
 
