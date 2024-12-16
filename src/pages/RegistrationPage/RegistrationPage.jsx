@@ -17,14 +17,20 @@ const RegistrationPage = () => {
     const dispatch = useDispatch();
 
     const handleSubmit = ({ username, email, password }, { resetForm }) => {
+
+
         dispatch(registerThunk({ username, email, password }))
             .unwrap()
             .then(data => {
-                toast.success(`Registration is success ${data.user.name}, welcome!`);
+                console.log('Răspuns primit:', data); // Debug: Log răspunsul complet
+                const userName = data.user?.username || 'User'; // Accesează username
+                toast.success(`Registration is success ${userName}, welcome!`);
             })
             .catch(() => {
                 toast.error('Invalid credentials');
             });
+
+
 
         resetForm();
     };
