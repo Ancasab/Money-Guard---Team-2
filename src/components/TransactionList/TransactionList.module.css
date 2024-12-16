@@ -84,22 +84,22 @@
   }
 
   .row_item:first-child {
-    width: 105px;
+    width: 80px;
     margin-left: 0;
   }
   .row_item:nth-child(2) {
-    width: 56px;
+    width: 50px;
     text-align: center;
   }
   .row_item:nth-child(3) {
-    width: 130px;
+    width: 160px;
   }
   .row_item:nth-child(4) {
     width: 150px;
   }
   .row_item:nth-child(5) {
     width: 88px;
-    text-align: center;
+    /* text-align: center; */
   }
 }
 /* DESKTOP */
