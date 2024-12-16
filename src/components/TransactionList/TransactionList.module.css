@@ -84,15 +84,15 @@
   }
 
   .row_item:first-child {
-    width: 80px;
+    width: 95px;
     margin-left: 0;
   }
   .row_item:nth-child(2) {
-    width: 50px;
+    width: 56px;
     text-align: center;
   }
   .row_item:nth-child(3) {
-    width: 160px;
+    width: 130px;
   }
   .row_item:nth-child(4) {
     width: 150px;
