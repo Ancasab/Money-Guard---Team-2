@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Money-Guard---Team-2/static/css/main.ea620752.css",
-    "main.js": "/Money-Guard---Team-2/static/js/main.6e3ff806.js",
-    "static/css/996.c8b506a4.chunk.css": "/Money-Guard---Team-2/static/css/996.c8b506a4.chunk.css",
+    "main.js": "/Money-Guard---Team-2/static/js/main.7fd32e84.js",
+    "static/css/996.99bb3a84.chunk.css": "/Money-Guard---Team-2/static/css/996.99bb3a84.chunk.css",
     "static/js/996.97be01ba.chunk.js": "/Money-Guard---Team-2/static/js/996.97be01ba.chunk.js",
     "static/css/542.7acda90b.chunk.css": "/Money-Guard---Team-2/static/css/542.7acda90b.chunk.css",
     "static/js/542.eed7e330.chunk.js": "/Money-Guard---Team-2/static/js/542.eed7e330.chunk.js",
@@ -15,8 +15,8 @@
     "static/media/sprite.svg": "/Money-Guard---Team-2/static/media/sprite.fcc7df84ef748aeb2a3de0d754515911.svg",
     "index.html": "/Money-Guard---Team-2/index.html",
     "main.ea620752.css.map": "/Money-Guard---Team-2/static/css/main.ea620752.css.map",
-    "main.6e3ff806.js.map": "/Money-Guard---Team-2/static/js/main.6e3ff806.js.map",
-    "996.c8b506a4.chunk.css.map": "/Money-Guard---Team-2/static/css/996.c8b506a4.chunk.css.map",
+    "main.7fd32e84.js.map": "/Money-Guard---Team-2/static/js/main.7fd32e84.js.map",
+    "996.99bb3a84.chunk.css.map": "/Money-Guard---Team-2/static/css/996.99bb3a84.chunk.css.map",
     "996.97be01ba.chunk.js.map": "/Money-Guard---Team-2/static/js/996.97be01ba.chunk.js.map",
     "542.7acda90b.chunk.css.map": "/Money-Guard---Team-2/static/css/542.7acda90b.chunk.css.map",
     "542.eed7e330.chunk.js.map": "/Money-Guard---Team-2/static/js/542.eed7e330.chunk.js.map",
@@ -24,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.ea620752.css",
-    "static/js/main.6e3ff806.js"
+    "static/js/main.7fd32e84.js"
   ]
 }
