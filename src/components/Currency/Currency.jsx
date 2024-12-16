@@ -38,10 +38,10 @@ const Currency = () => {
     }
   }, []);
 
-  const rateGBP = data?.rates['GBP'];
+  const rateUSD = data?.rates['GBP'];
   const rateEUR = data?.rates['EUR'];
-  const rateBuyGBP = rateGBP ? rateGBP.toFixed(2) : 'N/A';
-  const rateSellGBP = rateGBP ? (1 / rateGBP).toFixed(2) : 'N/A';
+  const rateBuyUSD = rateUSD ? rateUSD.toFixed(2) : 'N/A';
+  const rateSellUSD = rateUSD ? (1 / rateUSD).toFixed(2) : 'N/A';
   const rateBuyEUR = rateEUR ? rateEUR.toFixed(2) : 'N/A';
   const rateSellEUR = rateEUR ? (1 / rateEUR).toFixed(2) : 'N/A';
 
@@ -71,9 +71,9 @@ const Currency = () => {
         </thead>
         <tbody>
           <tr>
-            <td className={styles.tabledata}>GBP</td>
-            <td className={styles.tabledata}>{rateBuyGBP}</td>
-            <td className={styles.tabledata}>{rateSellGBP}</td>
+            <td className={styles.tabledata}>USD</td>
+            <td className={styles.tabledata}>{rateBuyUSD}</td>
+            <td className={styles.tabledata}>{rateSellUSD}</td>
           </tr>
           <tr>
             <td className={styles.tabledata}>EUR</td>
@@ -217,7 +217,7 @@ const Currency = () => {
       )}
       {isDesktop ? (
         <div className={styles.tablegraph}>
-          <div className={styles.gbp}>{rateBuyGBP}</div>
+          <div className={styles.gbp}>{rateBuyUSD}</div>
           <div className={styles.eur}>{rateBuyEUR}</div>
           <svg
             className={styles.svg}
