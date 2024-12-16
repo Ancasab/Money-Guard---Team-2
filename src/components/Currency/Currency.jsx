@@ -72,8 +72,13 @@ const Currency = () => {
         <tbody>
           <tr>
             <td className={styles.tabledata}>USD</td>
+
+//             <td className={styles.tabledata}>{rateBuyGBP}</td>
+//             <td className={styles.tabledata}>{rateSellGBP}</td>
+
             <td className={styles.tabledata}>{rateBuyUSD}</td>
             <td className={styles.tabledata}>{rateSellUSD}</td>
+
           </tr>
           <tr>
             <td className={styles.tabledata}>EUR</td>

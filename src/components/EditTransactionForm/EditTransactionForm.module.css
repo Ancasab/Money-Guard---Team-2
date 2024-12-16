@@ -100,18 +100,18 @@
   width: 181px;
 
   input {
-    padding: 0;
-    width: 100%;
+      padding: 0;
+      width: 100%;
   }
 
   &::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.4);
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.4);
   }
 }
 .sum {
@@ -160,28 +160,28 @@ input[type='number']:focus {
   width: 181px;
 
   &::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.4);
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.4);
   }
 
   input {
-    padding: 0;
-    width: 93px;
-    color: #fbfbfb;
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    margin-right: 32px;
+      padding: 0;
+      width: 93px;
+      color: #fbfbfb;
+      font-family: Poppins;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      margin-right: 32px;
   }
 }
 .svg_wrap {
@@ -196,32 +196,32 @@ input[type='number']:focus {
   margin-bottom: 48px;
 
   .input {
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
   }
   .input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.6);
   }
 
   .input:focus {
-    caret-color: rgba(255, 255, 255, 0.6);
+      caret-color: rgba(255, 255, 255, 0.6);
   }
 
   &::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.4);
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -248,12 +248,7 @@ input[type='number']:focus {
 }
 
 .btn_add {
-  background: linear-gradient(
-    97deg,
-    #ffc727 -16.42%,
-    #9e40ba 97.04%,
-    #7000ff 150.71%
-  );
+  background: linear-gradient(97deg, #ffc727 -16.42%, #9e40ba 97.04%, #7000ff 150.71%);
   color: #fff;
   text-align: center;
   font-size: 18px;
@@ -269,12 +264,7 @@ input[type='number']:focus {
 
   color: rgba(251, 251, 251, 1);
   background-image: none;
-  background: linear-gradient(
-    96.76deg,
-    #ffc727 -16.42%,
-    #9e40ba 97.04%,
-    #7000ff 150.71%
-  );
+  background: linear-gradient(96.76deg, #ffc727 -16.42%, #9e40ba 97.04%, #7000ff 150.71%);
   transition: all 1s ease 0s;
 }
 
@@ -284,12 +274,7 @@ input[type='number']:focus {
   box-shadow: 1px 9px 20px 0px rgba(0, 0, 0, 0.3);
 
   transform: scale(1.05);
-  background-image: linear-gradient(
-    to right,
-    #7000ff 0%,
-    #9e40ba 31%,
-    #ffc727 100%
-  );
+  background-image: linear-gradient(to right, #7000ff 0%, #9e40ba 31%, #ffc727 100%);
   background-size: 200%;
   background-position: right center;
 }
@@ -327,12 +312,7 @@ input[type='number']:focus {
   box-shadow: 1px 9px 20px 0px rgba(0, 0, 0, 0.3);
 
   transform: scale(1.05);
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 255, 255) 0%,
-    rgb(98, 63, 139) 31%,
-    rgb(255, 255, 255) 100%
-  );
+  background-image: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(98, 63, 139) 31%, rgb(255, 255, 255) 100%);
   background-size: 200%;
   background-position: right center;
   transition: all 1s ease 0s;
@@ -347,12 +327,7 @@ input[type='number']:focus {
 }
 
 .select {
-  background-color: linear-gradient(
-    97deg,
-    #ffc727 -16.42%,
-    #9e40ba 97.04%,
-    #7000ff 150.71%
-  );
+  background-color: linear-gradient(97deg, #ffc727 -16.42%, #9e40ba 97.04%, #7000ff 150.71%);
 }
 
 .custom-select {
@@ -377,88 +352,81 @@ input[type='number']:focus {
 
 @media screen and (max-width: 767.98px) {
   .form {
-    /* width: 100%; */
-
-    position: relative;
-    top: 90px;
-    right: 220px;
+      width: 100%;
   }
-  .btn_wrap .btn {
-    margin-bottom: 10px;
+
+  .switch__wrapper {
+      margin-bottom: 30px;
   }
-}
 
-.switch__wrapper {
-  margin-bottom: 30px;
-}
-
-.select_form {
-  width: 100%;
-}
-
-.sum_data_wrap {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 48px;
-  width: 280px;
-  margin-bottom: 48px;
-}
-.sum_wrap {
-  width: 280px;
-  padding: 0 20px;
-}
-
-.sum {
-  padding: 20px;
-  text-align: left;
-}
-.sum::placeholder {
-  text-align: left;
-}
-
-.data_wrap {
-  width: 280px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-}
-
-.customDatePicker {
-  width: 100%;
-}
-
-.comment {
-  max-width: 280px;
-  margin: 0 auto;
-  margin-bottom: 36px;
-  padding: 0 20px;
-
-  &::after {
-    bottom: 0px;
+  .select_form {
+      width: 100%;
   }
-}
 
-.comment_bottom {
-  width: 280px;
-  margin: 0 auto;
-  margin-bottom: 92px;
-  padding: 0 20px;
-
-  &::after {
-    bottom: -52px;
+  .sum_data_wrap {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      width: 280px;
+      margin-bottom: 48px;
   }
-  .input {
-    width: 100%;
+  .sum_wrap {
+      width: 280px;
+      padding: 0 20px;
   }
-}
 
-.btn {
-  width: 280px;
-}
-.calendarClassName {
-  position: absolute;
-  left: 57px;
+  .sum {
+      padding: 20px;
+      text-align: left;
+  }
+  .sum::placeholder {
+      text-align: left;
+  }
+
+  .data_wrap {
+      width: 280px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+  }
+
+  .customDatePicker {
+      width: 100%;
+  }
+
+  .comment {
+      max-width: 280px;
+      margin: 0 auto;
+      margin-bottom: 36px;
+      padding: 0 20px;
+
+      &::after {
+          bottom: 0px;
+      }
+  }
+
+  .comment_bottom {
+      width: 280px;
+      margin: 0 auto;
+      margin-bottom: 92px;
+      padding: 0 20px;
+
+      &::after {
+          bottom: -52px;
+      }
+      .input {
+          width: 100%;
+      }
+  }
+
+  .btn {
+      width: 280px;
+  }
+  .calendarClassName {
+      position: absolute;
+      left: 57px;
+  }
 }
